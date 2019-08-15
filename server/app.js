@@ -12,7 +12,9 @@ const usersRouter = require('./routes/users');
 const mongoose = require('mongoose');
 const session = require('express-session')
 const MongoStore = require('connect-mongo')(session)
+const cors = require('cors')
 
+app.use(cors())
 //
 app.use(session({
   secret: 'super secret',

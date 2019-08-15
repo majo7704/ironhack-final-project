@@ -11,7 +11,7 @@ export default class Auth {
         return axios({
             method: "POST",
             baseURL: this.domain,
-            url: "/auth/login",
+            url: "/users/login",
             headers: { 'content-type': 'application/x-www-form-urlencoded' },
             data: qs.stringify({username, password}),
         })
@@ -21,16 +21,21 @@ export default class Auth {
     }
   
     signup({username, password, email}) {
+        debugger
         return axios({
             method: "POST",
-            url: "/auth/signup",
+            url: "/users/signup",
             baseURL: this.domain,
             headers: { 'content-type': 'application/x-www-form-urlencoded' },
             data: qs.stringify({username, password, email}),
         })
         .then((response)=> {
+            debugger
             this.setUser(response.data);
         })
+        .catch((error)=> {
+            debugger
+          })
     }
 
     loggedIn(){
@@ -49,7 +54,7 @@ export default class Auth {
     logout(){
        return axios({
             baseURL: this.domain,
-            url: "/auth/logout"
+            url: "/users/logout"
         })
         .then((res)=> {
             localStorage.removeItem('user');
