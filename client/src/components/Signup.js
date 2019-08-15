@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import "./Signup.css";
 import Auth from "../utils/Auth";
+import {Link} from "react-router-dom";
+
 const auth = new Auth();
+
 
 
 class Signup extends Component {
@@ -31,12 +34,10 @@ class Signup extends Component {
     e.preventDefault();
     auth.signup(this.state.user)
         .then(()=> {
-          
             this.setState({error: ""})
             this.props.history.push("/")
         })
         .catch(({error})=> {
-          
             this.setState({error: error.data.message})
         })
   }
@@ -58,7 +59,10 @@ class Signup extends Component {
     ​
             <div>
               <input className="Signup-button Button-text" type="submit" value="Submit" />
+              <p className="Signup-redirect">Already an account? <Link to={`/login`} className="Link">
+             Login!</Link></p>
             </div>
+            
         </form>
     </div>
     )

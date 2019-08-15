@@ -1,3 +1,89 @@
+
+.Connect {
+  display: flex;
+  flex-direction: column;
+}
+
+.Connect-txt {
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #191818;
+  text-align: center;
+}
+
+.Facebook-btn {
+    width: 265px;
+    height: 52px;
+    border-radius: 8px;
+    background-color: #507cc0;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    margin: 10px;
+  }
+
+  .Facebook-icon {
+    width: 13px;
+    height: 20px;
+    position: relative;
+    left: -45px;
+  }
+
+  .Google-btn {
+    width: 262px;
+    height: 52px;
+    border-radius: 8px;
+    border: solid 0.4px #979797;
+    background-color: #ffffff;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #3d3d3d;
+    margin: 10px;
+  }
+
+  .Google-btn:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+  .Facebook-btn:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+
+
+  .Google-icon {
+    width: 13px;
+    height: 20px;
+    position: relative;
+    left: -45px;
+  }
+
+  .Or {
+  font-family: Avenir;
+  font-size: 14px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #191818;
+
+  }
+
 .Signup-page {
   display: flex;
   flex-direction: column;
@@ -5,6 +91,10 @@
   align-items: center;
   align-items: center;
   margin-top: 5em;
+  background-image: url("http://www.worldofwouda.nl/wp-content/uploads/2016/01/world-of-wouda-vleijt-Poster_Flora_botanische-print-monstera-510x679.jpg");
+  background-repeat: no-repeat;
+  background-size: 20vh;
+  background-position: right
 }
 
 
@@ -29,6 +119,23 @@
   color: #bec0c7;
   -webkit-appearance: none;
   border-style: none;
+}
+
+.Forgotten-password {
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #bec0c7;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.Forgotten-password:hover {
+ color: #3d3d3d;
 }
 
 .Signup-button {
@@ -61,3 +168,24 @@
   color: #3d3d3d;
   margin: 10px;
 }
+
+.Signup-redirect {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #191818;
+  text-align: center;
+}
+
+.Link {
+  text-decoration: none;
+  color: #191818;
+}
+
+.Link:hover {
+  color: rgba(238, 93, 129, 0.5);
+} 

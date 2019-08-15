@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Auth from "../utils/Auth";
 import "./Login.css";
+import {Link} from "react-router-dom";
+
 
 const auth = new Auth();
 
@@ -33,7 +35,7 @@ export default class Login extends Component {
         .then(()=> {
           debugger
             this.setState({error: ""})
-            this.props.history.push("/")
+            this.props.history.push("/myJungle")
         })
         .catch(({error})=> {
             this.setState({error: error.data.message})
@@ -44,19 +46,33 @@ export default class Login extends Component {
     
     return (
      <div className="Login-page">
-       <p className="Login-title">Login</p>
-       <form onSubmit={this.handleFormSubmit}> 
-           <div className="Login-input-field">
-               <input className="Login-input-text" type="text" name="username" placeholder="Username" value={this.state.user.username} onChange={this.handleFormChange} /> {/* reacts wants to be in charge of all the data   */}
-           </div>
 
-           <div className="Login-input-field">
-                <input className="Login-input-text" type="password" name="password" placeholder="password" checked={this.state.user.password} onChange={this.handleFormChange} />{/* reacts wants to be in charge of all the data   */}
-            </div>
-            <div >
-              <input  className="Login-button Button-text" type="submit" value="Submit" />
-            </div>
-        </form>
+       <div className="Connect">
+        <p className="Connect-txt">Connect</p>
+        <button className="Facebook-btn"><img className="Facebook-icon" src="icon/facebook.png"/>Signin with facebook</button>
+        <button className="Google-btn"><img className="Google-icon" src="icon/google.svg"/>Signin with Google</button>
+       </div>
+
+       <p className="Or">- or -</p>
+
+       <form onSubmit={this.handleFormSubmit}> 
+        <p className="Login-title">Login</p>
+        <div className="Login-input-field">
+          <input className="Login-input-text" type="text" name="username" placeholder="Username" value={this.state.user.username} onChange={this.handleFormChange} /> {/* reacts wants to be in charge of all the data   */}
+        </div>
+
+        <div className="Login-input-field">
+          <input className="Login-input-text" type="password" name="password" placeholder="password" checked={this.state.user.password} onChange={this.handleFormChange} />{/* reacts wants to be in charge of all the data   */}
+        </div>
+        
+        <p className="Forgotten-password">Forgotten password?</p>
+
+        <div>
+          <input  className="Login-button Button-text" type="submit" value="Submit" />
+          <p className="Signup-redirect">New user? <Link to={`/signup`} className="Link">
+             Signup first!</Link></p>
+        </div>
+      </form>
     </div>
     )
   }
