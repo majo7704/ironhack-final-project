@@ -31,11 +31,13 @@ class Signup extends Component {
     e.preventDefault();
     auth.signup(this.state.user)
         .then(()=> {
+          debugger
             this.setState({error: ""})
             this.props.history.push("/")
         })
-        .catch(({response})=> {
-            this.setState({error: response.data.message})
+        .catch(({error})=> {
+          debugger
+            this.setState({error: error.data.message})
         })
   }
 
