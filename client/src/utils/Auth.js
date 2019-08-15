@@ -34,7 +34,7 @@ export default class Auth {
             this.setUser(response.data);
         })
         .catch((error)=> {
-            debugger
+            console.log(`Error!!! ${error}`)
           })
     }
 
