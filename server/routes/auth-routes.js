@@ -25,17 +25,32 @@ router.post('/signup', function (req, res, next) {
 })
 
 router.post("/login", function (req, res) {
-  
-  User.find({ $or: [{ username: req.body.username }, { email: req.body.username }] })
-    .then(() => {
-      /// .....
-      // start a session
-      res.status(200).JSON({message: "loggend in "})
+  User.find({ $or: [{ username: req.body.username }, { email: req.body.email }] })
+    .then((user) => {
+      if (user) {
+        debugger
+        bcrypt.compare(req.body.password, user[0].password, function (err, match) {
+          if (err) throw new Error("Encryption error");
+          if (match) {
+            req.session.user = user;
+            res.status(200).send({message: 'Logged in'})
+          }
+        })
+      } else {
+        res.send('Invalid credentials')
+      }
     })
-  .catch((error) => {
-      res.status() //  500 or 401, depending on what went wrong
-    })
+    .catch((error) => {
+      res.send(`${error}`,
+        res.status(401).send({ error: "Unathorized" }), 
+        res.status(500).send({message: "Internal Server Error"})
+      )
+  })
   
 })
-
+router.get('/logout', (req, res) => {
+  req.session.destroy(function (err) {
+    if(err) return next(err)
+  })
+})
 module.exports = router;

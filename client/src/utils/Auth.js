@@ -21,7 +21,7 @@ export default class Auth {
     }
   
     signup({username, password, email}) {
-        debugger
+        
         return axios({
             method: "POST",
             url: "/users/signup",
@@ -30,7 +30,7 @@ export default class Auth {
             data: qs.stringify({username, password, email}),
         })
         .then((response)=> {
-            debugger
+          
             this.setUser(response.data);
         })
         .catch((error)=> {

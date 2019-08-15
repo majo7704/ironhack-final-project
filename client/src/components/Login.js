@@ -31,12 +31,12 @@ export default class Login extends Component {
     e.preventDefault();
     auth.login(this.state.user.username, this.state.user.password)
         .then(()=> {
-          
+          debugger
             this.setState({error: ""})
             this.props.history.push("/")
         })
-        .catch(({response})=> {
-            this.setState({error: response.data.message})
+        .catch(({error})=> {
+            this.setState({error: error.data.message})
         })
   }
 
