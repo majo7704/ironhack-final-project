@@ -37,7 +37,8 @@ export default class Login extends Component {
             this.setState({error: ""})
             this.props.history.push("/myJungle")
         })
-        .catch(({error})=> {
+      .catch((error) => {
+          debugger
             this.setState({error: error.data.message})
         })
   }
@@ -49,8 +50,8 @@ export default class Login extends Component {
 
        <div className="Connect">
         <p className="Connect-txt">Connect</p>
-        <button className="Facebook-btn"><img className="Facebook-icon" src="icon/facebook.png"/>Signin with facebook</button>
-        <button className="Google-btn"><img className="Google-icon" src="icon/google.svg"/>Signin with Google</button>
+        <button className="Facebook-btn"><img className="Facebook-icon" src="icon/facebook.png" alt=""/>Signin with facebook</button>
+        <button className="Google-btn"><img className="Google-icon" src="icon/google.svg" alt=""/>Signin with Google</button>
        </div>
 
        <p className="Or">- or -</p>

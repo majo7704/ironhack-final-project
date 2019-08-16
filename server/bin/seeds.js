@@ -4,11 +4,19 @@ const Plant = require('../models/Plant.js')
 mongoose.connect('mongodb://localhost/finalProject',
   { useNewUrlParser: true })
   .then(() => {
-    console.log('Connected to Mongo!')
-  }).catch(err => {
-    console.error('Error connecting to mongo', err);
+    console.log("Connected to mongodb.");
+    return mongoose.connection.db.dropCollection('plants');
   })
-
+  .then(() => {
+    console.log("Dropped plants collection.");
+    return Plant.insertMany(seedPlants);
+  })
+  .then(() => {
+    console.log(`We have seeded our database successfully with new plants.`);
+  })
+  .catch(err => {
+    console.error('Mongodb error', err);
+  })
 
 const seedPlants = [
   {
@@ -91,9 +99,46 @@ const seedPlants = [
     soil: 'well-drained soil',
     toxicity: 'non toxic',
     extra_info: 'The most adaptable of houseplants and the easiest to grow;  use distilled or purified water.'
+  },
+  {
+    common_name: 'Lavender',
+    image_url: 'https://en.wikipedia.org/wiki/Lavandula#/media/File:Single_lavendar_flower02.jpg',
+    scientific_name: 'Lavandula',
+    light_expousure: 'direct sunlight',
+    temperature: 21 - 30,
+    watering: 1,
+    fertilization: '2 times per year.',
+    mist: 1,
+    soil: 'well-drained, sandy soil',
+    toxicity: 'non toxic',
+    extra_info: 'Once established, lavender is very low- maintenance and requires minimal watering or pruning'
+  },
+  {
+    common_name: 'Bamboo Palm',
+    image_url: 'https://en.wikipedia.org/wiki/Lavandula#/media/File:Single_lavendar_flower02.jpg',
+    scientific_name: 'Dypsis lutescens',
+    light_expousure: 'minimal sunlight',
+    temperature: 21 - 30,
+    watering: 2,
+    fertilization: '1 time per month or less often during active groth.',
+    mist: 1,
+    soil: 'well-drained soil',
+    toxicity: 'non toxic',
+    extra_info: 'It made NASA’s list of top clean-air plants with its purifying score landing a whopping 8.4'
+  },
+  {
+    common_name: 'Golden Pothos',
+    image_url: 'https://www.greenandvibrant.com/sites/default/files/inline-images/best-bedroom-plants/golden-pothos.jpg',
+    scientific_name: 'Epipremnum aureum',
+    light_expousure: 'any lighthening',
+    temperature: 10 - 30,
+    watering: 1,
+    fertilization: '1 to 2 times per month during the spring and summer.',
+    mist: 1,
+    soil: 'well-drained soil',
+    toxicity: 'non toxic',
+    extra_info: 'the Golden Pothos has a reputation for being almost indestructible'
   }
 ]
 
-Plant.create(seedPlants, (err) => {
-  err ? console.log(`there is a seed error`) : console.log(`we have seeded succesfully to our database`)
-})
+

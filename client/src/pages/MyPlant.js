@@ -9,11 +9,11 @@ class MyPlant extends Component {
 
     this.state = { 
       
-      name: '',
+      cool_name: '',
       location: '',
       buying_date: '',
       size: '',
-      pot_size: '',
+      pot_diameter: '',
       repot_date: '',
       notes: ''
 
@@ -55,7 +55,7 @@ class MyPlant extends Component {
             
             <div>
                 <label>Give your plant a cool name</label>
-                <input type="text" name="name" placeholder="Ned Flanders" value={this.state.name} onChange={this.handleFormChange} /> 
+                <input type="text" name="cool_name" placeholder="Ned Flanders" value={this.state.cool_name} onChange={this.handleFormChange} /> 
             </div>
 ​
             <div>
@@ -74,7 +74,7 @@ class MyPlant extends Component {
             </div>
             <div>
                 <label>Pot diameters</label>
-                <input type="number" name="pot_size" placeholder="20 cm" checked={this.state.pot_size} onChange={this.handleFormChange} />
+                <input type="number" name="pot_diameter" placeholder="20 cm" checked={this.state.pot_diameter} onChange={this.handleFormChange} />
             </div>
             <div>
                 <label>Last repot date</label>
