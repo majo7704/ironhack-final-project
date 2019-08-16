@@ -46,18 +46,22 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: false
 }))
-app.use(cookieParser());
-
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use("/users", require("./routes/auth-routes"));
 
+app.use(cookieParser());
 
 let protectRoute = function (req, res, next) {
   if (req.session.user) next();
   else res.redirect("/login")
 }
+
+app.use("/", require('./routes/auth-routes'))
+app.use("/", protectRoute, require('./routes/index'))
+app.use("/", protectRoute, upload.single('image'), require('./routes/myJungle'))
+// app.use('/', protectRoute, require('./routes/allPlants'))
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
