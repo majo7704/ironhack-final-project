@@ -6,7 +6,7 @@ import Logout from "./components/Logout";
 import PlantList from "./components/PlantList";
 import MyPlant from "./components/MyPlant";
 
-// import PlantCare from "./components/PlantCare";
+import PlantCare from "./components/PlantCare";
 
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
         <Route path="/plantList" component={PlantList} /> 
         <Route path="/myPlant" component={MyPlant} />  
  
-        {/* <Route path="/plantCare" component={PlantCare} />   */}
+        <Route path="/plantCare" component={PlantCare} />  
 
       </Switch>
 
