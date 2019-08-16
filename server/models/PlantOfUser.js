@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-
+//pushing to master
 const myPlantsSchema = new Schema({
   scientific_plant: {
     type: mongoose.Types.ObjectId,
