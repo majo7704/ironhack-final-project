@@ -33,11 +33,12 @@ export default class Login extends Component {
     e.preventDefault();
     auth.login(this.state.user.username, this.state.user.password)
         .then(()=> {
-          
+          debugger
             this.setState({error: ""})
             this.props.history.push("/myJungle")
         })
-        .catch(({error})=> {
+      .catch((error) => {
+          debugger
             this.setState({error: error.data.message})
         })
   }
@@ -49,8 +50,13 @@ export default class Login extends Component {
 
        <div className="Connect">
         <p className="Connect-txt">Connect</p>
+<<<<<<< HEAD
         <button className="Connect-button Facebook"><img className="Facebook-icon" src="icon/facebook.png"/>Signin with facebook</button>
         <button className="Connect-button Google"><img className="Google-icon" src="icon/google.svg"/>Signin with Google</button>
+=======
+        <button className="Facebook-btn"><img className="Facebook-icon" src="icon/facebook.png" alt=""/>Signin with facebook</button>
+        <button className="Google-btn"><img className="Google-icon" src="icon/google.svg" alt=""/>Signin with Google</button>
+>>>>>>> fd04d7af6c1ad35cb6f3275fca1ea79faf962f9e
        </div>
 
        <p className="Or">- or -</p>

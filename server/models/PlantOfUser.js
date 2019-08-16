@@ -2,16 +2,31 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const myPlantsSchema = new Schema({
+  scientific_plant: {
+    type: mongoose.Types.ObjectId,
+    ref: "plants"
+  },
   cool_name: String,
   location: String,
-  with_you_since: Date,
+  buying_dtae: Date,
   size: Number,
   pot_diameter: Number,
-  last_report: Date,
+  report_date: Date,
   notes: String,
-  image: String
+  image: String,
+  common_name: String,
+  image_url: String,
+  scientific_name: String,
+  light_expousure: String,
+  temperature: Number,
+  watering: Number,
+  fertilization: String,
+  mist: Number,
+  soil: String,
+  toxicity: String,
+  extra_info: String
 })
 
-const PlantOfUser = mongoose.model('myPlants', myPlantsSchema)
+const PlantOfUser = mongoose.model('plantsOfUser', myPlantsSchema)
 
 module.exports = PlantOfUser;
