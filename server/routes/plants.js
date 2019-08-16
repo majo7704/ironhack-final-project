@@ -22,6 +22,7 @@ router.get('/all', (req, res, next) => {
 )
 
 router.post('/add', (req, res) => {
+  //probably to delete
   let newPlant = {
     common_name: req.body.common_name,
     image_url: req.body.image_url,
@@ -52,6 +53,8 @@ router.get('/edit', (req, res, next) => {
   })
 })
 router.post('/edit/:id', (req, res, next) => {
+  debugger
+  //edit form (second step)
   const updatePlant = {
     cool_name: mongoose.Types.ObjectId(req.body.cool_name),
     location: req.body.location,

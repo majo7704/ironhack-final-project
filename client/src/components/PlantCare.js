@@ -11,10 +11,14 @@ export default class PlantCare extends Component {
   }
 
   componentDidMount() {
-    const {params} = this.props.match;
+    const { params } = this.props.match;
     const plantId = params._id
 
-    axios.get(`${process.env.REACT_APP_API/plantId}`)
+    axios({
+      method: "GET",
+      url: `${process.env.REACT_APP_API / plantId}`,
+      withCredentials: true
+    })
     .then(response => {
       this.setState({plant: response.data})
     })

@@ -13,7 +13,10 @@ const session = require('express-session')
 const MongoStore = require('connect-mongo')(session)
 const cors = require('cors')
 
-app.use(cors())
+app.use(cors({
+  origin: true, //sendig the cookies back and forth
+  credentials: true
+}));
 //
 app.use(session({
   secret: 'super secret',
@@ -51,13 +54,15 @@ app.use(bodyParser.urlencoded({
 app.use(cookieParser());
 
 let protectRoute = function (req, res, next) {
+  debugger
   if (req.session.user) next();
-  else res.redirect("/login")
+  // else res.redirect("/login")
+  else res.status(403).json({errorMessage: "Unauthorized"})
 }
 
 app.use('/users', usersRouter);
 app.use("/users", require("./routes/auth-routes"));
-app.use("/users", require('./routes/auth-routes'))
+// app.use("/users", require('./routes/auth-routes'))
 app.use("/plants", protectRoute, require('./routes/plants'))
 
 app.use("/", protectRoute, upload.single('image'), require('./routes/myJungle'))
@@ -68,7 +73,8 @@ app.use(function(req, res, next) {
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
+  debugger
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

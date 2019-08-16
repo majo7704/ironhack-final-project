@@ -12,8 +12,9 @@ export default class Auth {
             method: "POST",
             baseURL: this.domain,
             url: "/users/login",
+            withCredentials: true,
             headers: { 'content-type': 'application/x-www-form-urlencoded' },
-            data: qs.stringify({username, password}),
+            data: qs.stringify({ username, password })
         })
         .then((response)=> {
             this.setUser(response.data)
@@ -25,6 +26,7 @@ export default class Auth {
         return axios({
             method: "POST",
             url: "/users/signup",
+            withCredentials: true,
             baseURL: this.domain,
             headers: { 'content-type': 'application/x-www-form-urlencoded' },
             data: qs.stringify({username, password, email}),
@@ -54,7 +56,8 @@ export default class Auth {
     logout(){
        return axios({
             baseURL: this.domain,
-            url: "/users/logout"
+            url: "/users/logout",
+            withCredentials: true,
         })
         .then((res)=> {
             localStorage.removeItem('user');
