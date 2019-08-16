@@ -53,6 +53,7 @@ router.get('/newPlant', (res, req, nex) => {
 })
 
 router.post("/newPlant", (req, res, next) => {
+  //click on button "Add to my collection"(first step)
   let newPlant = {
     cool_name: req.body.cool_name,
     location: req.body.location,
@@ -66,7 +67,7 @@ router.post("/newPlant", (req, res, next) => {
   PlantOfUser.create(newPlant)
     .then((response) => {
       return User.findByIdAndUpdate(req.session.user._id, {
-      $push: {plants: response._id}
+      $push: { listOfCreatedPlants: response._id}
     },{new: true})
     })
     .then((userResponse) => {
@@ -76,5 +77,7 @@ router.post("/newPlant", (req, res, next) => {
     next(err)
   })
 })
+
+//route to edit my plant
 
 module.exports = router;
