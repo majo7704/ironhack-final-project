@@ -49,8 +49,8 @@ export default class Login extends Component {
 
        <div className="Connect">
         <p className="Connect-txt">Connect</p>
-        <button className="Facebook-btn"><img className="Facebook-icon" src="icon/facebook.png"/>Signin with facebook</button>
-        <button className="Google-btn"><img className="Google-icon" src="icon/google.svg"/>Signin with Google</button>
+        <button className="Connect-button Facebook"><img className="Facebook-icon" src="icon/facebook.png"/>Signin with facebook</button>
+        <button className="Connect-button Google"><img className="Google-icon" src="icon/google.svg"/>Signin with Google</button>
        </div>
 
        <p className="Or">- or -</p>

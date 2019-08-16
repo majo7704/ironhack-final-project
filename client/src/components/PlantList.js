@@ -11,7 +11,7 @@ export default class PlantList extends Component {
   }
 
   componentDidMount() {
-    axios.get(`${process.env.REACT_APP_API}/plants`)
+    axios.get(`${process.env.REACT_APP_API}/all`)
     .then(response => {
       this.setState({plantList: response.data})
     })
