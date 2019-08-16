@@ -38,13 +38,13 @@ export default class PlantCare extends Component {
 
       <div>
         <div>
-          <img></img>
+          <img src="./icon/sun.png" alt="sun_icon"/>
           <p>Exposition</p>
           <p>{props.light_expousure}</p>
         </div>
 
         <div>
-          <img></img>
+          <img src="./icon/"/>
           <p>Temperature</p>
           <p>{props.temperature}</p>
         </div>

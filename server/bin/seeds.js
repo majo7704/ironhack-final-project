@@ -102,7 +102,7 @@ const seedPlants = [
   },
   {
     common_name: 'Lavender',
-    image_url: 'https://en.wikipedia.org/wiki/Lavandula#/media/File:Single_lavendar_flower02.jpg',
+    image_url: 'https://i.pinimg.com/564x/7f/ae/3f/7fae3f0f0e64c27c4d8b34d0c5fe0702.jpg',
     scientific_name: 'Lavandula',
     light_expousure: 'direct sunlight',
     temperature: 21 - 30,
@@ -115,7 +115,7 @@ const seedPlants = [
   },
   {
     common_name: 'Bamboo Palm',
-    image_url: 'https://en.wikipedia.org/wiki/Lavandula#/media/File:Single_lavendar_flower02.jpg',
+    image_url: 'https://i.pinimg.com/564x/da/02/1e/da021ebeb32f01775d7cefb81eb36d38.jpg',
     scientific_name: 'Dypsis lutescens',
     light_expousure: 'minimal sunlight',
     temperature: 21 - 30,
@@ -128,7 +128,7 @@ const seedPlants = [
   },
   {
     common_name: 'Golden Pothos',
-    image_url: 'https://www.greenandvibrant.com/sites/default/files/inline-images/best-bedroom-plants/golden-pothos.jpg',
+    image_url: 'https://i.pinimg.com/564x/e0/b3/dc/e0b3dc3d7d38acdeb0fe7eadd8df7002.jpg',
     scientific_name: 'Epipremnum aureum',
     light_expousure: 'any lighthening',
     temperature: 10 - 30,
