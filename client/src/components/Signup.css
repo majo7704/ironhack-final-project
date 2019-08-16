@@ -16,11 +16,10 @@
   text-align: center;
 }
 
-.Facebook-btn {
-    width: 265px;
+.Connect-button {
+  width: 265px;
     height: 52px;
     border-radius: 8px;
-    background-color: #507cc0;
     font-family: Montserrat;
     font-size: 14px;
     font-weight: normal;
@@ -29,60 +28,52 @@
     line-height: normal;
     letter-spacing: normal;
     text-align: center;
-    color: #ffffff;
     margin: 10px;
-  }
+}
 
-  .Facebook-icon {
-    width: 13px;
-    height: 20px;
-    position: relative;
-    left: -45px;
-  }
-
-  .Google-btn {
-    width: 262px;
-    height: 52px;
-    border-radius: 8px;
-    border: solid 0.4px #979797;
-    background-color: #ffffff;
-    font-family: Montserrat;
-    font-size: 14px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #3d3d3d;
-    margin: 10px;
-  }
-
-  .Google-btn:hover {
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-  }
-  .Facebook-btn:hover {
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-  }
+.Google {
+  background-color: #ffffff;
+  color: #3d3d3d;
+}
 
 
-  .Google-icon {
-    width: 13px;
-    height: 20px;
-    position: relative;
-    left: -45px;
-  }
-
-  .Or {
-  font-family: Avenir;
-  font-size: 14px;
-  font-weight: 500;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: #191818;
+.Facebook {
+  color: #ffffff;
+  background-color: #507cc0;
 
   }
+
+.Connect-button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.Facebook-icon {
+  width: 13px;
+  height: 20px;
+  position: relative;
+  left: -45px;
+}
+
+
+
+.Google-icon {
+  width: 13px;
+  height: 20px;
+  position: relative;
+  left: -45px;
+}
+
+.Or {
+font-family: Avenir;
+font-size: 14px;
+font-weight: 500;
+font-style: normal;
+font-stretch: normal;
+line-height: normal;
+letter-spacing: normal;
+color: #191818;
+
+}
 
 .Signup-page {
   display: flex;
