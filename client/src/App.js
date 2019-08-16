@@ -2,14 +2,11 @@ import React from 'react'
 import {Route, Switch} from "react-router-dom";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
-import Logout from "./pages/Logout";
+import Logout from "./components/Logout";
 import PlantList from "./components/PlantList";
-import MyPlant from "./pages/MyPlant";
+import MyPlant from "./components/MyPlant";
 
 // import PlantCare from "./components/PlantCare";
-
-
-
 
 
 function App() {

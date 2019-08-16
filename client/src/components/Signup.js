@@ -58,7 +58,7 @@ class Signup extends Component {
             </div>
     ​
             <div>
-              <input className="Signup-button Button-text" type="submit" value="Submit" />
+              <input className="Button Signup-button Button-text" type="submit" value="Submit" />
               <p className="Signup-redirect">Already an account? <Link to={`/login`} className="Link">
              Login!</Link></p>
             </div>
