@@ -4,6 +4,9 @@ const Plant = require('../models/Plant')
 const User = require('../models/User')
 const PlantOfUser = require('../models/PlantOfUser')
 
+
+
+//My profile with 2 components
 router.get('/myJungle', (req, res, next) => {
   if (!req.session.user) {//check if the user logged in, protcted by session
     User.findById(req.session.user._id)
