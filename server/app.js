@@ -7,7 +7,6 @@ const bodyParser = require('body-parser')
 const logger = require('morgan');
 const multer = require('multer')
 const app = express();
-const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const mongoose = require('mongoose');
 const session = require('express-session')
@@ -47,9 +46,7 @@ app.use(bodyParser.urlencoded({
   extended: false
 }))
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use("/users", require("./routes/auth-routes"));
+
 
 app.use(cookieParser());
 
@@ -58,8 +55,11 @@ let protectRoute = function (req, res, next) {
   else res.redirect("/login")
 }
 
-app.use("/", require('./routes/auth-routes'))
-app.use("/", protectRoute, require('./routes/index'))
+app.use('/users', usersRouter);
+app.use("/users", require("./routes/auth-routes"));
+app.use("/users", require('./routes/auth-routes'))
+app.use("/plants", protectRoute, require('./routes/plants'))
+
 app.use("/", protectRoute, upload.single('image'), require('./routes/myJungle'))
 // app.use('/', protectRoute, require('./routes/allPlants'))
 // catch 404 and forward to error handler
@@ -75,7 +75,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.json(err);
 });
 
 
