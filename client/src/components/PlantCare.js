@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';  
 
-export default class PlantCare extends Component {
+export default class PlantCare  extends Component {
   constructor(){
     super()
     this.state = {
@@ -16,7 +16,7 @@ export default class PlantCare extends Component {
 
     axios({
       method: "GET",
-      url: `${process.env.REACT_APP_API / plantId}`,
+      url: `${process.env.REACT_APP_API/plantId}`,
       withCredentials: true
     })
     .then(response => {

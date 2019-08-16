@@ -19,7 +19,7 @@ function App() {
         <Route path="/plantList" component={PlantList} /> 
         <Route path="/myPlant" component={MyPlant} />  
  
-        <Route path="/plantCare" component={PlantCare} />  
+        <Route path="/plantCare/:id" component={PlantCare} />  
 
       </Switch>
 
