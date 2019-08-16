@@ -30,7 +30,7 @@ export default class PlantList extends Component {
           <>
           {this.state.plantList.map((plant) => {
             return (
-            <Link to={`/${plant._id}`} >
+            <Link to={`/plantCare/${plant._id}`} >
                 <div>
                   <img src={plant.image_url} alt="plant_img"/>
                   <h3>{plant.common_name}</h3>

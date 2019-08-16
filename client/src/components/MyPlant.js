@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from "axios";
 import qs from "querystring"; 
+import {Link} from "react-router-dom";
+import "./MyPlant.css"
  
 class MyPlant extends Component {
   constructor(props){
@@ -49,6 +51,12 @@ class MyPlant extends Component {
     return (
       
       <div>
+          <img className="Monstera" src = "https://c.stocksy.com/a/1aH600/z9/1497549.jpg?1559310506" alt="Monstera"/>
+          <div className="Care-Plant-box">
+            <Link to={"/login"} className="Care-links">Care</Link>
+            <Link to={"/login"} className="Plant-links">My plant</Link>
+        </div>
+
         <form 
           onSubmit={this.handleFormSubmit}
           ref={this.formRef} 
@@ -88,6 +96,10 @@ class MyPlant extends Component {
             </div>
             <div>
               <input type="submit" value="Submit" />
+            </div>
+
+            <div className="Box-container">
+              <input type="file" name="picture"/>
             </div>
         </form>
       
