@@ -77,7 +77,16 @@ router.post("/newPlant", (req, res, next) => {
     next(err)
   })
 })
-
+//wisjList notfinished
+router.get('/wish', (req, res, next) => {
+    res.json('myJungle')
+})
+router.post('/wish', (req, res, next) => {
+  let newWish = {
+    state: 'aWish',
+    
+  }
+})
 //route to edit my plant
 
 module.exports = router;

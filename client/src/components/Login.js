@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
+import { Link } from "react-router-dom";
+
+import Facebook from './Facebook'
 import Auth from "../utils/Auth";
 import "./Login.css";
-import {Link} from "react-router-dom";
+
 
 
 const auth = new Auth();
@@ -38,7 +41,7 @@ export default class Login extends Component {
           this.props.history.push("/plantList")
         })
       .catch((error) => {
-          debugger
+         
             this.setState({error: error.data.message})
         })
   }
@@ -49,9 +52,10 @@ export default class Login extends Component {
      <div className="Login-page">
 
        <div className="Connect">
-        <p className="Connect-txt">Connect</p>
-        <button className="Connect-button Facebook"><img className="Facebook-icon" src="icon/facebook.png"/>Signin with facebook</button>
-        <button className="Connect-button Google"><img className="Google-icon" src="icon/google.svg"/>Signin with Google</button>
+          <p className="Connect-txt">Connect</p>
+          
+          <Facebook/>
+        <button className="Connect-button Google"><img className="Google-icon" src="icon/google.svg"/>Login with Google</button>
        </div>
 
        <p className="Or">- or -</p>

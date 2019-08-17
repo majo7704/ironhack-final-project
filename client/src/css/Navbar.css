@@ -1,0 +1,43 @@
+.Nav {
+  display: flex; 
+  background-color: #1f234c;
+  color: #ffffff;
+  height: 80px;
+  border-radius: 0 0 0 50px;
+  padding-bottom: 5%;
+  align-content: space-between;
+  width: 100%;
+}
+.Nav div {
+  padding: 5% 10% 5% 5%;
+  
+}
+.Nav h3 {
+  color: #ffffff;
+  font-size: 36px;
+  font-weight: bold;
+}
+nav .Nav_link_container {
+  display: flex;
+  height: 100%;
+  margin-left: 4%;
+}
+p {
+  margin: 0;
+  padding: 0;
+}
+.navbar_link {
+  margin: 0 auto;
+  padding: 0;
+  height: 50%;
+  display: flex;
+  border-right: 3px solid grey;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+div .navbar_link-box {
+  text-align: center;
+  margin: 10%;
+  padding: 0;
+}

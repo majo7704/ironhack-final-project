@@ -31,58 +31,58 @@ export default class PlantCare  extends Component {
       {this.state.plant ?
       <>
       <div>
-        <h2>{props.common_name}</h2>
-        <p>{props.scientific_name}</p>
-        <img src={props.image_url} alt="plant_img" />
+        <h2>{this.props.common_name}</h2>
+        <p>{this.props.scientific_name}</p>
+        <img src={this.props.image_url} alt="plant_img" />
       </div>
 
       <div>
         <div>
           <img src="./icon/sun.png" alt="sun_icon"/>
           <p>Exposition</p>
-          <p>{props.light_expousure}</p>
+          <p>{this.props.light_expousure}</p>
         </div>
 
         <div>
           <img src="./icon/"/>
           <p>Temperature</p>
-          <p>{props.temperature}</p>
+          <p>{this.props.temperature}</p>
         </div>
 
         <div> 
           <img></img>
           <p>Watering</p>
-          <p>{props.watering}</p>
+          <p>{this.props.watering}</p>
         </div>
 
         <div> 
           <img></img>
           <p>Fertilization</p>
-          <p>{props.fertilization}</p>
+          <p>{this.props.fertilization}</p>
         </div>
 
         <div>      
           <img></img>
           <p>Spray</p>
-          <p>{props.mist}</p>
+          <p>{this.props.mist}</p>
         </div>
 
         <div>
           <img></img>
           <p>Soil</p>
-          <p>{props.soil}</p>{props.soil}
+          <p>{this.props.soil}</p>{this.props.soil}
         </div>
 
         <div>
           <img></img>
           <p>Toxicity</p>
-          <p>{props.toxicity}</p>
+          <p>{this.props.toxicity}</p>
         </div>
 
         <div>
           <img></img>
           <p>Tips</p>
-          <p>{props.extra_info}</p>
+          <p>{this.props.extra_info}</p>
         </div>
         
       </div>

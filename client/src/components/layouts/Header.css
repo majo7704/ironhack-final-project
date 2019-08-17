@@ -1,0 +1,12 @@
+.Header {
+  height: 80px;
+  background-color: #1f234c;
+  color: #ffffff;
+  font-size: 32px;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.Header h3 {
+  padding: 2% 0 5px 13%;
+  
+}
