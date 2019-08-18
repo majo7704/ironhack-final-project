@@ -12,6 +12,7 @@ import myJungle from './pages/myJungle'
 // import Navbar from "./components/Navbar"
 import Facebook from './components/Facebook'
 import MainLayout from './components/layouts/MainLayout'
+import globalStyles from '../src/assets/styles/global.css'
 
 
 
@@ -29,7 +30,7 @@ function App() {
         <Route path="/plantCare/:id" component={PlantCare} />  
 
       </Switch>
-
+    
     </div>
   )
 }

@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link } from "react-router-dom";
 
 import MainLayout from './layouts/MainLayout'
+import Footer from './Footer'
 
 export default class PlantList extends Component {
   constructor(){
@@ -43,6 +44,7 @@ export default class PlantList extends Component {
           </>
           : null}
           </div>
+          
           </>
       )
     }

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { witthRouter } from 'react-router'
 import Header from './layouts/Header'
+import plus from '../assets/icons/add (1).svg'
 
 import "../css/Navbar.css"
 import Auth from '../utils/Auth'
@@ -33,36 +34,54 @@ export default class Navbar extends Component {
     const user = auth.getUser();
     return (
       <>
-      <Header/>
+        <Header />
         <nav className="Nav">
           <div className="Nav_link_container">
-            
             <div className="navbar_link">
               <div className="navbar_link-box">
                 <Link to={"/plants/all"}>
-                  <p>Plants</p>
+                  <p
+                    style={{
+                      fontFamily: "Nunito",
+                      fontWeight: "bold",
+                      color: "white"
+                    }}
+                  >
+                    Plants
+                  </p>
                 </Link>
                 <div className="number_box">32</div>
               </div>
-            {/* <Link to={`/myJungle`}><p>Plants</p><p>{user.user.counter.plants}</p></Link>  */}
+              {/* <Link to={`/myJungle`}><p>Plants</p><p>{user.user.counter.plants}</p></Link>  */}
             </div>
 
             <div className="navbar_link">
               <div className="navbar_link-box">
-                <Link to={'/wish'}>
-                  <p>Wishlist</p>
+                <Link to={"/wish"}>
+                  <p
+                    style={{
+                      fontFamily: "Nunito",
+                      fontWeight: "bold",
+                      color: "white"
+                    }}
+                  >
+                    Wishlist
+                  </p>
                 </Link>
-                  <div>32</div>
-                
+                <div>32</div>
               </div>
               {/* <Link to={`/myWishList`}><p>Wishlist</p><p>{user.user.counter.wish}</p></Link> */}
             </div>
-          <div>
-              <button><Link to={"/myPlant"}><img src="icon/plus.png" alt="" /></Link></button>
+            <div>
+              <button className='pinkButton'>
+                <Link to={"/myPlant"}>
+                  <img style={{width: '20px',height: '20px', color: "white" }} src={plus} alt="" />
+                </Link>
+              </button>
             </div>
-            </div>
+          </div>
         </nav>
       </>
-    )
+    );
       }
     }

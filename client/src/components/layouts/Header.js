@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <div className='Header'>
       <>
-        <h3>My jungle</h3>
+        <h3 style={{fontFamily: "Nunito", fontWeight: 'bold'}}>My jungle</h3>
         </>
     </div>
   )

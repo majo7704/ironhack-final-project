@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import FacebookLogin from 'react-facebook-login'
+import Navbar from './Navbar'
+import MainLayout from './layouts/MainLayout';
 
 export default class Facebook extends Component {
   state = {
@@ -28,13 +30,15 @@ export default class Facebook extends Component {
     let fbContent;
 
     if (this.state.isLoggedIn) {
+      
       fbContent = (
         <div style={{
-          width: '250px',
+          width: '86%',
           margin: 'auto',
           background: "#f4f4f4",
           padding: '20px'
         }}>
+          
           <img src={this.state.picture} alt={this.state.name} />
           <h2>Welcome {this.state.name}</h2>
           Email: {this.state.email}
@@ -49,9 +53,13 @@ export default class Facebook extends Component {
         callback={this.responseFacebook} /> )
     }
     return (
+      <>
+      <Navbar/>
       <div>
+        
         {fbContent}
-      </div>
+        </div>
+        </>
     )
   }
 }

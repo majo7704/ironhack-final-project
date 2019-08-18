@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import axios from "axios";
 import qs from "querystring"; 
 import { Link } from "react-router-dom";
-
+import Navbar from "./Navbar"
+// import Footer from './Footer'
 import "./MyPlant.css"
- 
+import MainLayout from './layouts/MainLayout';
+
 class MyPlant extends Component {
   constructor(props){
     super(props);
@@ -41,64 +43,189 @@ class MyPlant extends Component {
         console.log(error)
     })
   }
-  render(){
+  render() {
     return (
       <div>
+        <Navbar />
         <div class="photo">
-          <img className="Monstera" src = "https://c.stocksy.com/a/1aH600/z9/1497549.jpg?1559310506" alt="Monstera"/>
-          <div className="Care-Plant-box">
-            <Link to={"/login"} className="Care-links">Care</Link>
-            <Link to={"/myPlant"} className="Plant-links">My plant</Link>
+          <img
+            className="Monstera"
+            src="https://c.stocksy.com/a/1aH600/z9/1497549.jpg?1559310506"
+            alt="Monstera"
+          />
+          <div
+            style={{
+              fontFamily: "Montserrat",
+              fontWeight: "bold",
+              margin: "0"
+            }}
+            className="Care-Plant-box"
+          >
+            <Link to={"/login"} className="Care-links">
+              Care
+            </Link>
+            <Link to={"/myPlant"} className="Plant-links">
+              My plant
+            </Link>
           </div>
-          </div>
-        <form className="form"
+        </div>
+        <form
+          className="form"
           onSubmit={this.handleFormSubmit}
-          ref={this.formRef} 
-          onSubmit={this.handleFormSubmit} >
-            
-            <div className="coolInput">
-                <label>Give your plant a cool name</label>
-                <input type="text" name="cool_name" placeholder="Ned Flanders" value={this.state.cool_name} onChange={this.handleFormChange} /> 
-            </div>
-​
+          ref={this.formRef}
+          onSubmit={this.handleFormSubmit}
+        >
+          <div className="coolInput">
+            <label
+              style={{
+                fontFamily: "Montserrat",
+                fontWeight: "bold",
+                margin: "0"
+              }}
+            >
+              Give your plant a cool name
+            </label>
+            <input
+              type="text"
+              name="cool_name"
+              placeholder="Ned Flanders"
+              value={this.state.cool_name}
+              onChange={this.handleFormChange}
+            />
+          </div>
+          <div class="Ultimate-container">
             <div className="restInput">
-                <label>Where is your plant:</label>
-                <input type="text" name="location" placeholder="Living room" value={this.state.location} onChange={this.handleFormChange} />
-            </div>
-​
-            <div className="restInput">
-                <label>Part of your life since</label>
-                <input type="date" name="buying_date" placeholder="September 2019" checked={this.state.buying_date} onChange={this.handleFormChange} />
-            </div>
-​
-            <div className="restInput">
-                <label>Size</label>
-                <input type="text" name="size" placeholder="15 cm" checked={this.state.size} onChange={this.handleFormChange} />
-            </div>
-            <div className="restInput">
-                <label>Pot diameters</label>
-                <input type="number" name="pot_diameter" placeholder="20 cm" checked={this.state.pot_diameter} onChange={this.handleFormChange} />
-            </div>
-            <div className="restInput">
-                <label>Last repot date</label>
-                <input type="date" name="repot_date" placeholder="Not happened yet" checked={this.state.repot_date} onChange={this.handleFormChange} />
-            </div>
-​
-            <div className="restInput">
-                <label>Notes:</label>
-                <textarea  type="text" name="notes" placeholder="Need additionnal info? Type it here :)" value={this.state.notes} onChange={this.handleFormChange} />{/* reacts wants to be in charge of all the data   */}
-            </div>
-            <div>
-              <input type="submit" value="Validate" className="btn"  />
+              <label
+                style={{
+                  fontFamily: "Montserrat",
+                  fontWeight: "bold",
+                  margin: "0"
+                }}
+              >
+                Where is your plant:
+              </label>
+              <input
+                type="text"
+                name="location"
+                placeholder="Living room"
+                value={this.state.location}
+                onChange={this.handleFormChange}
+              />
             </div>
 
-            <div className="Box-container">
-              <input type="file" name="picture"/>
+            <div className="restInput">
+              <label
+                style={{
+                  fontFamily: "Montserrat",
+                  fontWeight: "bold",
+                  margin: "0"
+                }}
+              >
+                Part of your life since
+              </label>
+              <input
+                type="date"
+                name="buying_date"
+                placeholder="September 2019"
+                checked={this.state.buying_date}
+                onChange={this.handleFormChange}
+              />
             </div>
+
+            <div className="restInput">
+              <label
+                style={{
+                  fontFamily: "Montserrat",
+                  fontWeight: "bold",
+                  margin: "0"
+                }}
+              >
+                Size
+              </label>
+              <input
+                type="text"
+                name="size"
+                placeholder="15 cm"
+                checked={this.state.size}
+                onChange={this.handleFormChange}
+              />
+            </div>
+            <div className="restInput">
+              <label
+                style={{
+                  fontFamily: "Montserrat",
+                  fontWeight: "bold",
+                  margin: "0"
+                }}
+              >
+                Pot diameters
+              </label>
+              <input
+                style={{
+                  fontFamily: "Montserrat",
+                  fontWeight: "bold",
+                  margin: "0"
+                }}
+                type="number"
+                name="pot_diameter"
+                placeholder="20 cm"
+                checked={this.state.pot_diameter}
+                onChange={this.handleFormChange}
+              />
+            </div>
+            <div className="restInput">
+              <label
+                style={{
+                  fontFamily: "Montserrat",
+                  fontWeight: "bold",
+                  margin: "0"
+                }}
+              >
+                Last repot date
+              </label>
+              <input
+                type="date"
+                name="repot_date"
+                placeholder="Not happened yet"
+                checked={this.state.repot_date}
+                onChange={this.handleFormChange}
+              />
+            </div>
+
+            <div className="restInput">
+              <label
+                style={{
+                  fontFamily: "Montserrat",
+                  fontWeight: "bold",
+                  margin: "0"
+                }}
+              >
+                Notes:
+              </label>
+              <textarea
+                type="text"
+                name="notes"
+                placeholder="Need additionnal info? Type it here :)"
+                value={this.state.notes}
+                onChange={this.handleFormChange}
+              />
+              {/* reacts wants to be in charge of all the data   */}
+            </div>
+            <div>
+              <input
+                type="submit"
+                value="Validate"
+                className="btn-validate"
+              />
+            </div>
+            <div className="Box-container">
+              <input type="file" name="picture" />
+            </div>
+          </div>
         </form>
-      
-    </div>
-    )
+        {/* <Footer/> */}
+      </div>
+    );
   }
 }
 

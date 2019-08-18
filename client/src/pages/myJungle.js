@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 import PlantList from '../components/PlantList'
 import MainLayout from '../components/layouts/MainLayout'
+import Search from '../components/Search'
 import '../css/Navbar.css'
 
 export default class myJungle extends Component {
@@ -11,11 +12,9 @@ export default class myJungle extends Component {
       search: ''
     }
   }
-  updateSearch(event) {
-    this.setState({search: event})
-  }
+  
   render() {
-    let {search} = this.state
+    
     return (
       <>
       <MainLayout/>
@@ -26,11 +25,7 @@ export default class myJungle extends Component {
             })
             }
          </ul> */}
-
-          <form action="">
-            <input className='searchField' type="text"/>
-          </form>
-       
+          <Search/>
       
         </div>
         </>
