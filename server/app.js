@@ -61,11 +61,14 @@ let protectRoute = function (req, res, next) {
 }
 
 app.use('/users', usersRouter);
+app.use("/plant-care", require("./routes/plant-care"));
+
 app.use("/users", require("./routes/auth-routes"));
 // app.use("/users", require('./routes/auth-routes'))
 //app.use("/plants", protectRoute, require('./routes/plants'))
 
 app.use("/", protectRoute, upload.single('image'), require('./routes/myJungle'))
+
 // app.use('/', protectRoute, require('./routes/allPlants'))
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -74,7 +77,7 @@ app.use(function(req, res, next) {
 
 // error handler
 app.use(function (err, req, res, next) {
-  debugger
+  
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

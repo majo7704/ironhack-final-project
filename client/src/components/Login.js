@@ -76,9 +76,7 @@ export default class Login extends Component {
             Log in with Google
           </button>
         </div>
-
         <p className="Or">- or -</p>
-
         <form onSubmit={this.handleFormSubmit}>
           <p className="Login-title">Login</p>
           <div className="Login-input-field">
