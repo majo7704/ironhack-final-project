@@ -7,7 +7,6 @@ const bodyParser = require('body-parser')
 const logger = require('morgan');
 const multer = require('multer')
 const app = express();
-const usersRouter = require('./routes/users');
 const mongoose = require('mongoose');
 const session = require('express-session')
 const MongoStore = require('connect-mongo')(session)
@@ -60,19 +59,18 @@ let protectRoute = function (req, res, next) {
   else res.status(403).json({errorMessage: "Unauthorized"})
 }
 
+const usersRouter = require('./routes/users');
+const plantsRouter = require('./routes/plants');
+const plantCareRouter = require("./routes/plant-care");
+
+
 app.use('/users', usersRouter);
-app.use("/plants", protectRoute, require("./routes/plants"));
-app.use("/users", require("./routes/auth-routes"));
+app.use("/plants", plantsRouter);
+app.use("/plant-care", plantCareRouter);
 
-app.use("/plant-care", require("./routes/plant-care"));
-
-
-// app.use("/users", require('./routes/auth-routes'))
-
-
+app.use("/users", require('./routes/auth-routes'))
 app.use("/", protectRoute, upload.single('image'), require('./routes/myJungle'))
 
-// app.use('/', protectRoute, require('./routes/allPlants'))
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
@@ -80,7 +78,8 @@ app.use(function(req, res, next) {
 
 // error handler
 app.use(function (err, req, res, next) {
-  
+
+
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

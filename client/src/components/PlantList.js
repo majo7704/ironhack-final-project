@@ -15,7 +15,7 @@ export default class PlantList extends Component {
   componentDidMount() {
     axios({
       method: 'GET',
-      url: `${process.env.REACT_APP_API}/plants/all`,
+      url: `${process.env.REACT_APP_API}/plants`,
       withCredentials: true // here's the juice!
       })
     .then(response => {
