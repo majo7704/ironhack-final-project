@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import '../css/Search.css'
 import loop from '../assets/icons/search.svg'
+import axios from 'axios';
 
 export default class Search extends Component {
     constructor() {
@@ -10,8 +11,21 @@ export default class Search extends Component {
         search: "",
         suggestions: {},
         plantList: ""
-          };
+      };
+      
     }
+  componentDidMount() {
+    axios({
+      method: 'GET',
+      url: `${process.env.REACT_APP_API}/search`,
+      withCredentials: true // here's the juice!
+      })
+    .then(response => {
+      this.setState({plantList: response.data})
+    })
+    .catch(err => console.log(err))
+  }
+  
   onTextChanged = (e) => {
     const value = e.target.value;
     let suggestions = [];
@@ -35,7 +49,7 @@ export default class Search extends Component {
     }
     return (
       <ul>
-        {suggestions.map(plant => (
+        {this.suggestions.map(plant => (
           <li onClick={() => this.suggestionSelected(plant)}>{plant}</li>
         ))}
       </ul>
