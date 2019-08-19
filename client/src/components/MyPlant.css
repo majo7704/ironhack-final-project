@@ -46,7 +46,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 5%;
+  padding:5% 0 5% 50%;
 }
 .Box-label {
   width: 375px;

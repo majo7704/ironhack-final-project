@@ -211,15 +211,18 @@ class MyPlant extends Component {
               />
               {/* reacts wants to be in charge of all the data   */}
             </div>
+            <div className="Box-container">
+              <button className="Add-image">
+                {/* <img src={} alt=""/> */}
+                <input type="file" name="picture" />
+              </button>
+            </div>
             <div>
               <input
                 type="submit"
                 value="Validate"
                 className="btn-validate"
               />
-            </div>
-            <div className="Box-container">
-              <input type="file" name="picture" />
             </div>
           </div>
         </form>

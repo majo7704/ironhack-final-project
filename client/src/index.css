@@ -15,7 +15,10 @@ body {
   box-sizing: border-box;
   background-origin: content-box;
 }
+/* footer {
+  background-image: url('./assets/icons/Light-gree_clipped_rev_1.png')
 
+} */
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

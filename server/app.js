@@ -63,7 +63,7 @@ let protectRoute = function (req, res, next) {
 app.use('/users', usersRouter);
 app.use("/users", require("./routes/auth-routes"));
 // app.use("/users", require('./routes/auth-routes'))
-app.use("/plants", protectRoute, require('./routes/plants'))
+//app.use("/plants", protectRoute, require('./routes/plants'))
 
 app.use("/", protectRoute, upload.single('image'), require('./routes/myJungle'))
 // app.use('/', protectRoute, require('./routes/allPlants'))
