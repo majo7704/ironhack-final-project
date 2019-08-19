@@ -32,7 +32,7 @@ router.post("/login", function (req, res) {
           if (err) throw new Error("Encryption error");
           if (match) {
             req.session.user = user[0];
-            
+            debugger
             res.status(200).send({message: 'Logged in'})
           }
         })
