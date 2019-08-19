@@ -1,6 +1,7 @@
 import axios from "axios";
 import qs from "querystring";
 
+
 export default class Auth {
     constructor(domain) {
         this.domain = domain || process.env.REACT_APP_API;

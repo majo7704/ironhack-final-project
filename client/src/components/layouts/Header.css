@@ -1,0 +1,16 @@
+.Header {
+  height: 70px;
+  width: 100%;
+  background-color: #1f234c;
+  color: #ffffff;
+  font-size: 32px;
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+.Header h3 {
+  padding: 0 0 4% 12%;
+  
+}

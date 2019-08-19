@@ -1,0 +1,58 @@
+.Nav {
+  display: flex; 
+  background-color: #1f234c;
+  color: #ffffff;
+  height: 80px;
+  border-radius: 0 0 0 50px;
+  padding-bottom: 5%;
+  align-content: space-between;
+  width: 100%;
+  margin: 0;
+  
+  
+  
+}
+.Nav div {
+  padding: 5% 10% 5% 5%;
+  
+}
+/* .Nav h3 {
+  color: #ffffff;
+  font-size: 36px;
+  font-weight: bold;
+  
+} */
+nav .Nav_link_container {
+  display: flex;
+  height: 100%;
+  margin-left: 4%;
+  padding: 20px;
+}
+p {
+  margin: 0 auto;
+  padding: 0;
+}
+.navbar_link {
+  margin: 0 auto;
+  padding: 0;
+  height: 40%;
+  display: flex;
+  border-right: 3px solid grey;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+div .navbar_link-box {
+  text-align: center;
+  text-decoration: none;
+  /* margin: 10%; */
+  padding: 10%;
+  
+}
+.pinkButton {
+  background: #ee5d81;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 14px;
+}

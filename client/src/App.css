@@ -1,4 +1,9 @@
 body {
-  margin: 10%;
-  width: 100vw;
+  background-image: url('../assets/icons/blub-2@3x_clipped_rev_1.png');
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position-y: 70px;
+  background-origin: content-box;
+  box-sizing: border-box;
+  background-origin: content-box;
 }

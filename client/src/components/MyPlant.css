@@ -1,25 +1,25 @@
-body {
+/* body {
   -webkit-font-smoothing: none;
-
-}
-
+} */
 .Monstera {
-  height: 18em;
-  overflow:hidden;
-
-}
-
-.Care-Plant-box {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  height: 40vh;
   width: 100%;
-  height: 2.5em;
+  overflow: hidden;
+}
+.Care-Plant-box {
+  display:flex;
+  flex-direction:row;
+  justify-content:space-around;
+  margin: 0;
+  flex-grow: 1;
+  height: 50px;
   opacity: 0.3;
   background-color: #e0e1f3;
-  font-family: Nunito;
-  font-size: 2em;
+  font-family: 'Nunito';
+  font-size: 22px;
   font-weight: bold;
+  
+
 }
 
 .Plant-links, .Care-links {
@@ -33,35 +33,88 @@ body {
    color: #2b2a2a;
  }
 
-.Box {
-  width: 187px;
-  height: 42px;
+/* .Box {
+  
+  
   border-radius: 10px;
   border: solid 1px rgba(31, 35, 76, 0.3);
-  font-family: Montserrat;
+  font-family: 'Montserrat';
   font-size: 14px;
   font-weight: 500;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
   color: #bec0c7;
-}
-
+} */
 .Box-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  padding:5% 0 5% 50%;
 }
-
 .Box-label {
   width: 375px;
-
 }
-
 form {
   display: flex;
   flex-direction: column;
   margin: 2em;
+}
+form input {
+  width: 90%;
+}
+.coolInput {
+  display: flex;
+  flex-direction: column;
+}
+.coolInput input {
+  padding: 10px;
+  border-radius: 14px;
+  border: solid 1px rgba(31, 35, 76, 0.3);
+  margin: 2% 0;
+  font-size: 14px;
+}
+.coolInput label {
+  font: bold 14px Nunito-Bold;
+}
+.restInput {
+  display: flex;
+  align-items: center;
+  margin: 1% 5% 0 0;
+ 
+}
+.restInput label {
+   font: bold 14px Nunito-Bold;
+}
+.restInput input {
+  padding: 10px;
+  width: 66%;
+  /* flex-grow: 1; */
+  border-radius: 10px;
+  border: solid 1px rgba(31, 35, 76, 0.3);
+  margin:1% 0 1% 15%;
+  font-size: 14px;
+  
+}
+
+.restInput textarea {
+  padding: 20px;
+  border-radius: 10px;
+  border: solid 1px rgba(31, 35, 76, 0.3);
+  flex-grow: 1;
+  margin: 0 0 1% 20%;
+
+}
+
+.btn-validate {
+  background-color: rgba(238, 93, 129, 0.5);
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 14px;
+  border: none;
+  margin-left: 50%;
+  width:30%;
+}
+.Ultimate-container {
+  margin: 0 auto;
+  width: 100%;
+  
+  
 }
