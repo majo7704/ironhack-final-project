@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from "axios";
-import qs from "querystring"; 
 import {Link} from "react-router-dom";
 import "./MyPlant.css"
  
@@ -37,17 +36,21 @@ class MyPlant extends Component {
     axios({
         method: "POST",
         headers: { 'content-type': 'application/x-www-form-urlencoded' },
-        data:  qs.stringify(this.state),
-      url: `${process.env.REACT_APP_API}/newPlant`,
-        withCredentials: true
-    })
+        url: `${process.env.REACT_APP_API}/newPlant`,
+        withCredentials: true,
+        data: form
+      })
 
-    .catch((error)=> {
-        console.log(error)
-    })
-  
+      .then((response)=> {
+        this.props.history.push("/PlantList")
+      })
+      .catch((error)=> {
+        this.setState({error: error.message})
+      })
   }
-  render(){
+
+  
+  render() {
     return (
       
       <div>
@@ -58,7 +61,6 @@ class MyPlant extends Component {
         </div>
 
         <form 
-          onSubmit={this.handleFormSubmit}
           ref={this.formRef} 
           onSubmit={this.handleFormSubmit} >
             
@@ -107,5 +109,6 @@ class MyPlant extends Component {
     )
   }
 }
+
 
 export default MyPlant;
