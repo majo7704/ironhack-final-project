@@ -10,7 +10,7 @@ import Header from './components/layouts/Header'
 import PlantCare from "./components/PlantCare";
 import myJungle from './pages/myJungle'
 // import Navbar from "./components/Navbar"
-import Facebook from './components/Facebook'
+// import Facebook from './components/Facebook'
 import MainLayout from './components/layouts/MainLayout'
 import globalStyles from '../src/assets/styles/global.css'
 
