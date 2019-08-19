@@ -7,7 +7,7 @@ const PlantOfUser = require('../models/PlantOfUser')
 
 //All plants
 const Plants = require('../models/Plant.js')
-router.get('/', (req, res, next) => {
+router.get('/all', (req, res, next) => {
     Plants.find({})
       .then((plants) => {
         res.json(plants)
@@ -73,8 +73,9 @@ router.post('/edit/:id', (req, res, next) => {
     })
 })
 router.get('/search', (req, res, next) => {
-  Plant.find({ $text: { $search: req.query.q } })
+  Plants.find({ $text: { $search: req.query.q } })
     .then((plants) => {
+      
       if (!plants) next(createError(404));
       else res.status(200).json(plants)
     })
@@ -83,7 +84,7 @@ router.get('/search', (req, res, next) => {
   })
 })
 router.get('/:plantId', (req, res, next) => {
-  Plant.findById(req.params.plantId)
+  Plants.findById(req.params.plantId)
     .then((plant) => {
       if (!plant) next(createError(404));
       else res.status(200).json(plant)

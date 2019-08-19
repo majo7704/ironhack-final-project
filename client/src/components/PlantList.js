@@ -9,43 +9,41 @@ export default class PlantList extends Component {
   constructor(){
     super()
     this.state = {
-        plantList: undefined
+        plantList: []
     }
   }
   componentDidMount() {
     axios({
       method: 'GET',
-      url: `${process.env.REACT_APP_API}/plants`,
+      url: `${process.env.REACT_APP_API}/plants/all`,
       withCredentials: true // here's the juice!
       })
-    .then(response => {
-      this.setState({plantList: response.data})
+      .then(response => {
+      debugger
+        this.setState({ plantList: response.data})
     })
     .catch(err => console.log(err))
   }
-    render() {
+  render() {
+      debugger 
       return (
-        <>
-        <MainLayout/>
-        <div>
-          {this.state.plantList ?
-          <>
-          {this.state.plantList.map((plant) => {
-            return (
-            <Link to={`/plantCare/${plant._id}`} >
-              <div>
-                <img src={plant.image_url} alt="plant_img"/>
-                <h3>{plant.common_name}</h3>
-                <p>{plant.scientific_name}</p>
-              </div>
-            </Link> 
-            )
-          })}
-          </>
-          : null}
-          </div>
-          
-          </>
-      )
+        <MainLayout>
+          {this.state.plantList &&
+            <>
+              {this.state.plantList.map((plant) => {
+                return (
+                  <Link to={`/plantCare/${plant._id}`} >
+                    <div>
+                      <img src={plant.image_url} alt="plant_img" />
+                      <h3>{plant.common_name}</h3>
+                      <p>{plant.scientific_name}</p>
+                    </div>
+                  </Link>
+                )
+              })}
+            </>
+          }
+          </MainLayout>
+        )
     }
 }

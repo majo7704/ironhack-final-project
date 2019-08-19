@@ -1,23 +1,14 @@
-import React, { Component } from 'react'
-
 import PlantList from '../components/PlantList'
 import MainLayout from '../components/layouts/MainLayout'
-import Search from '../components/Search'
 import '../css/Navbar.css'
 
-export default class myJungle extends Component {
-  constructor() {
-    super()
-    this.state = {
-      search: ''
-    }
-  }
-  
-  render() {
-    
-    return (
+import React from 'react'
+
+export default function myJungle() {
+  return (
+    <div>
       <>
-      <MainLayout/>
+        <MainLayout />
         <div>
           {/* <ul>
             {this.props.plantList.map((plant) => {
@@ -25,10 +16,12 @@ export default class myJungle extends Component {
             })
             }
          </ul> */}
-          <Search/>
-      
+          
+
         </div>
-        </>
-    )
-  }
+      </>
+    </div>
+  )
 }
+
+
