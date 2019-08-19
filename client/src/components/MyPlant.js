@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar"
 import "./MyPlant.css"
@@ -6,8 +7,6 @@ import React, { Component } from 'react';
 import axios from "axios";; 
 
 // import Footer from './Footer'
-
-
 
 class MyPlant extends Component {
   constructor(props){
@@ -119,7 +118,6 @@ class MyPlant extends Component {
                 value={this.state.location}
                 onChange={this.handleFormChange}
               />
-
             </div>
 
             <div className="restInput">
@@ -242,5 +240,4 @@ class MyPlant extends Component {
 }
 
 export default MyPlant;
-
 
