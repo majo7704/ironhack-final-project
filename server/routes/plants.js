@@ -1,7 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const Plant = require('../models/Plant')
-const User = require('../models/User')
 const PlantOfUser = require('../models/PlantOfUser')
 
 
@@ -9,7 +7,7 @@ const PlantOfUser = require('../models/PlantOfUser')
 
 //All plants
 const Plants = require('../models/Plant.js')
-router.get('/all', (req, res, next) => {
+router.get('/', (req, res, next) => {
     Plants.find({})
       .then((plants) => {
         res.json(plants)

@@ -1,11 +1,13 @@
-import React, { Component } from 'react';
-import axios from "axios";; 
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar"
-// import Footer from './Footer'
-
 import "./MyPlant.css"
 import MainLayout from './layouts/MainLayout';
+import React, { Component } from 'react';
+import axios from "axios";; 
+
+// import Footer from './Footer'
+
+
 
 class MyPlant extends Component {
   constructor(props){
