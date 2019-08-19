@@ -77,6 +77,7 @@ export default class Login extends Component {
           </button>
         </div>
 
+
         <p className="Or">- or -</p>
 
         <form onSubmit={this.handleFormSubmit}>

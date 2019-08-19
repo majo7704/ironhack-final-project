@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import axios from "axios";
-import qs from "querystring"; 
+import axios from "axios";; 
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar"
 // import Footer from './Footer'
+
 import "./MyPlant.css"
 import MainLayout from './layouts/MainLayout';
 
@@ -35,14 +35,19 @@ class MyPlant extends Component {
     axios({
         method: "POST",
         headers: { 'content-type': 'application/x-www-form-urlencoded' },
-        data:  qs.stringify(this.state),
         url: `${process.env.REACT_APP_API}/newPlant`,
-        withCredentials: true
-    })
-    .catch((error)=> {
-        console.log(error)
-    })
+        withCredentials: true,
+        data: form
+      })
+
+      .then((response)=> {
+        this.props.history.push("/PlantList")
+      })
+      .catch((error)=> {
+        this.setState({error: error.message})
+      })
   }
+
   render() {
     return (
       <div>
@@ -69,7 +74,8 @@ class MyPlant extends Component {
             </Link>
           </div>
         </div>
-        <form
+
+      <form
           className="form"
           onSubmit={this.handleFormSubmit}
           ref={this.formRef}
@@ -111,6 +117,7 @@ class MyPlant extends Component {
                 value={this.state.location}
                 onChange={this.handleFormChange}
               />
+
             </div>
 
             <div className="restInput">
@@ -233,4 +240,5 @@ class MyPlant extends Component {
 }
 
 export default MyPlant;
+
 
