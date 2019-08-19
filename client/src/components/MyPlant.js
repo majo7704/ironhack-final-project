@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import axios from "axios";
-import Navbar from './Navbar'
-
-import {Link} from "react-router-dom";
+import axios from "axios";; 
+import { Link } from "react-router-dom";
+import Navbar from "./Navbar"
+// import Footer from './Footer'
 
 import "./MyPlant.css"
 import MainLayout from './layouts/MainLayout';
@@ -74,7 +74,8 @@ class MyPlant extends Component {
             </Link>
           </div>
         </div>
-        <form
+
+      <form
           className="form"
           onSubmit={this.handleFormSubmit}
           ref={this.formRef}

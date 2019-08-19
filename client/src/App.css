@@ -1,5 +1,8 @@
 body {
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
   background-image: url('../assets/icons/blub-2@3x_clipped_rev_1.png');
   background-repeat: no-repeat;
   background-size: 50%;
@@ -7,6 +10,7 @@ body {
   background-origin: content-box;
   box-sizing: border-box;
   background-origin: content-box;
+<<<<<<< HEAD
 }
 
 
@@ -45,3 +49,6 @@ body {
     transform: rotate(360deg);
   }
 } */
+=======
+}
+>>>>>>> master
