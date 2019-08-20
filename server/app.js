@@ -53,7 +53,7 @@ app.use(bodyParser.urlencoded({
 app.use(cookieParser());
 
 let protectRoute = function (req, res, next) {
-  debugger
+ 
   if (req.session.user) next();
   // else res.redirect("/login")
   else res.status(403).json({errorMessage: "Unauthorized"})

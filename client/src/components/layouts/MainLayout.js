@@ -7,7 +7,7 @@ import Footer from '../Footer'
     <div style={{display: "block"}}  className="Main-box">
       <Navbar/>
       {props.children}
-      
+      <Footer />
     </div>
   )
 }

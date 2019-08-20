@@ -8,6 +8,8 @@ import "../css/Navbar.css"
 import Auth from '../utils/Auth'
 const auth = new Auth();
 
+
+
 export default class Navbar extends Component {
   state = {
     user: null
@@ -33,12 +35,10 @@ export default class Navbar extends Component {
   render() {
     const user = auth.getUser();
     return (
-      <>
+      <div>
         <Header />
         <nav className="Nav">
-          <div className="Nav_link_container">
             <div className="navbar_link">
-              <div className="navbar_link-box">
                 <Link to={"/plants/all"}>
                   <p
                     style={{
@@ -48,15 +48,13 @@ export default class Navbar extends Component {
                     }}
                   >
                     Plants
+                    <div className="number_box">32</div>
                   </p>
                 </Link>
-                <div className="number_box">32</div>
-              </div>
               {/* <Link to={`/myJungle`}><p>Plants</p><p>{user.user.counter.plants}</p></Link>  */}
             </div>
 
             <div className="navbar_link">
-              <div className="navbar_link-box">
                 <Link to={"/wish"}>
                   <p
                     style={{
@@ -66,10 +64,9 @@ export default class Navbar extends Component {
                     }}
                   >
                     Wishlist
+                    <div>32</div>
                   </p>
                 </Link>
-                <div>32</div>
-              </div>
               {/* <Link to={`/myWishList`}><p>Wishlist</p><p>{user.user.counter.wish}</p></Link> */}
             </div>
             <div>
@@ -79,9 +76,8 @@ export default class Navbar extends Component {
                 </Link>
               </button>
             </div>
-          </div>
         </nav>
-      </>
+        </div>
     );
       }
     }

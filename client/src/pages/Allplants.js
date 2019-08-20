@@ -28,6 +28,7 @@ export default class Allplants extends Component {
             <PlantList plants={this.state.plantList} /> :
             <p>Loading</p>
         }
+       
       </MainLayout>
     )
   }

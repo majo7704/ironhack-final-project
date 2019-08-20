@@ -5,7 +5,14 @@ import '../css/Navbar.css'
 import axios from "axios"
 export default class myJungle extends Component {
   state = {
-    plantList: null
+    plantList: null,
+    count: 0
+  }
+  incrementCount(){
+    this.setState({count:this.state.plantList + 1})
+  }
+  decrementCount() {
+    this.setState({ count: this.state.plantList - 1 })
   }
   componentDidMount() {
     axios({
@@ -14,17 +21,17 @@ export default class myJungle extends Component {
       withCredentials: true // here's the juice!
     })
       .then(response => {
-        debugger
+       
         this.setState({ plantList: [...response.data.wishListPlants, ...response.data.listOfCreatedPlants ]})
       })
       .catch(err => {
-        debugger
+       
         console.log(err)
       })
   }
 
   render() {
-    debugger
+    
     return (
       <MainLayout>
         {

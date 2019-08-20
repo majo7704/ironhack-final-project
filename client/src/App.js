@@ -29,7 +29,8 @@ function App() {
         <Route path="/logout" component={Logout} />  
         <Route path="/all" component={AllPlants} /> 
         <Route path="/myPlant" component={MyPlant} />  
-        <Route path='/myJungle' component={myJungle}/> 
+        <Route path='/myJungle' component={myJungle} /> 
+        
         <Route path="/plantCare/:id" component={PlantCare} />  
         <Route path='/search' component={SearchPlants}/>
       </Switch>
