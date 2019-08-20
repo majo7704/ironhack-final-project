@@ -40,7 +40,7 @@ export default class Login extends Component {
         .then(()=> {
           debugger
             this.setState({error: ""})
-          this.props.history.push("/plants/all")
+          this.props.history.push("/all")
         })
       .catch((error) => {
          

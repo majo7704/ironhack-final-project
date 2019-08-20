@@ -138,6 +138,45 @@ const seedPlants = [
     soil: 'well-drained soil',
     toxicity: 'non toxic',
     extra_info: 'the Golden Pothos has a reputation for being almost indestructible'
+  },
+  {
+    common_name: 'Boston ferns',
+    image_url: 'https://i.pinimg.com/564x/7b/4a/88/7b4a8868a6d3b17bcc98a9f14d3a2227.jpg',
+    scientific_name: 'Nephrolepis exaltata',
+    light_expousure: 'indirect sunlight',
+    temperature: 10 - 30,
+    watering: 5,
+    fertilization: 'slow-release fertilizer mixed into the soil in early spring',
+    mist: 1,
+    soil: 'well-drained soil',
+    toxicity: 'non toxic',
+    extra_info: 'Boston fern is not poisonous to pets, but can be attractive to some animals, especially cats.'
+  },
+  {
+    common_name: 'Chinese Evergreens',
+    image_url: 'https://i.pinimg.com/564x/9c/0a/20/9c0a20927760417034483eb800a16e9a.jpg',
+    scientific_name: 'Algaonemas ',
+    light_expousure: 'indirect sunlight',
+    temperature: 16 - 22,
+    watering: 1,
+    fertilization: 'once or twice yearly using a water-soluble houseplant fertilizer',
+    mist: 1,
+    soil: 'well-drained soil',
+    toxicity: 'non toxic',
+    extra_info: 'Clean the leaves occasionally by wiping them down with a soft, damp rag or simply place them in the shower and allow them to air dry.'
+  },
+  {
+    common_name: 'Aloe vera',
+    image_url: 'https://i.pinimg.com/564x/12/90/b2/1290b2c16a665e5b994db9c875d22f1f.jpg',
+    scientific_name: 'Aloe barbadensis ',
+    light_expousure: 'direct sunlight',
+    temperature: 16 - 21,
+    watering: 1,
+    fertilization: 'once or twice yearly using a water-soluble houseplant fertilizer',
+    mist: 1,
+    soil: 'Sandy',
+    toxicity: 'non toxic',
+    extra_info: 'Give your aloe a proper dormancy period in the fall and winter. Aloe tend to bloom in late winter or early spring, so giving them a period of rest consisting of less frequent watering and cooler temperatures may encourage them to flower.'
   }
 ]
 
