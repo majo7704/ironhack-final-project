@@ -1,4 +1,4 @@
-.Nav {
+nav.Nav {
   display: flex; 
   background-color: #1f234c;
   color: #ffffff;
@@ -7,32 +7,25 @@
   padding-bottom: 5%;
   align-content: space-between;
   width: 100%;
-  margin: 0;
-  
-  
+  margin: -1px 0 0 0;
   
 }
-.Nav div {
+nav.Nav div {
   padding: 5% 10% 5% 5%;
   
 }
-/* .Nav h3 {
-  color: #ffffff;
-  font-size: 36px;
-  font-weight: bold;
-  
-} */
 nav .Nav_link_container {
+  width: 100vw;
   display: flex;
   height: 100%;
-  margin-left: 4%;
   padding: 20px;
+  box-sizing: border-box;
 }
-p {
+nav p {
   margin: 0 auto;
   padding: 0;
 }
-.navbar_link {
+/* nav .navbar_link {
   margin: 0 auto;
   padding: 0;
   height: 40%;
@@ -41,18 +34,21 @@ p {
   flex-direction: column;
   align-content: center;
   justify-content: center;
-}
-div .navbar_link-box {
+} */
+nav .navbar_link {
   text-align: center;
   text-decoration: none;
-  /* margin: 10%; */
   padding: 10%;
-  
 }
-.pinkButton {
+nav .pinkButton {
   background: #ee5d81;
   width: 48px;
   height: 48px;
   border: none;
   border-radius: 14px;
+}
+
+nav  * {
+  margin: 0;
+  padding: 0;
 }
