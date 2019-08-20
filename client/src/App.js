@@ -30,7 +30,7 @@ function App() {
         <Route path="/all" component={AllPlants} /> 
         <Route path="/myPlant" component={MyPlant} />  
         <Route path='/myJungle' component={myJungle}/> 
-        <Route path="/plantCare/:id" component={PlantCare} />  
+        <Route path="/PlantCare/:id" component={PlantCare} />  
         <Route path='/search' component={SearchPlants}/>
       </Switch>
     

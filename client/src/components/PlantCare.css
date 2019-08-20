@@ -32,3 +32,26 @@
     justify-content: center;
     margin: 1em;
 }
+
+.Plant-info-header {
+  display: flex;
+  background-color: #1f234c;
+  color: #ffffff;
+  height: 80px;
+  padding-bottom: 5%;
+  align-content: space-between;
+  width: 100%;
+  margin: 0;
+}
+
+.Plant-info-white-links {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  color: #1f234c;
+  border-radius: 0 0 0 50px;
+  padding: 5%;
+  align-content: space-between;
+  width: 100%;
+  margin: 0;
+}

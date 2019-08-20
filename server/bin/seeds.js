@@ -177,7 +177,60 @@ const seedPlants = [
     soil: 'Sandy',
     toxicity: 'non toxic',
     extra_info: 'Give your aloe a proper dormancy period in the fall and winter. Aloe tend to bloom in late winter or early spring, so giving them a period of rest consisting of less frequent watering and cooler temperatures may encourage them to flower.'
-  }
+  },
+  {
+    common_name: "Mother-in-law's tongue",
+    image_url: 'https://i.pinimg.com/564x/2d/de/26/2dde26943c006d53c3c1c154340b0fbd.jpg',
+    scientific_name: 'Sansevieria trifasciata ',
+    light_expousure: 'from low to high light levels, but do best in medium light',
+    temperature: 13 - 27,
+    watering: 1,
+    fertilization: 'mild cactus fertilizer during the growing season',
+    mist: 1,
+    soil: 'loose, well-drained potting mix. They will do well in sandier soils.',
+    toxicity: 'non toxic',
+    extra_info: 'improve air quality in living and working spaces'
+  },
+  {
+    common_name: "Kentia palms",
+    image_url: 'https://i.pinimg.com/564x/2d/de/26/2dde26943c006d53c3c1c154340b0fbd.jpg',
+    scientific_name: 'Howeia',
+    light_expousure: 'indirect sunlight',
+    temperature: 13 - 27,
+    watering: 1,
+    fertilization: 'monthly only in the spring and summer with liquid fertilizer or slow-release pellets',
+    mist: 1,
+    soil: 'Fast-draining, well-aerated potting mix',
+    toxicity: 'non toxic',
+    extra_info: 'The tree will appreciate room as it grows to develop the full canopy'
+  },
+  {
+    common_name: "Banana, plantain tree",
+    image_url: 'https://i.pinimg.com/564x/19/5c/a8/195ca85287d7ca521360d36c1a614cbd.jpg',
+    scientific_name: 'Musaspp',
+    light_expousure: 'full sun or dappled shade',
+    temperature: 20 - 27,
+    watering: 2,
+    fertilization: 'abundantly',
+    mist: 1,
+    soil: 'loose, well-drained, very rich potting mix',
+    toxicity: 'non toxic',
+    extra_info: 'These are among the fastest growing plants'
+  },
+
+  {
+    common_name: "Bird of Paradise",
+    image_url: 'https://i.pinimg.com/564x/3f/eb/40/3feb404ed4e8611563f8800ddace4353.jpg',
+    scientific_name: 'Strelitzia',
+    light_expousure: 'bright light',
+    temperature: 20 - 27,
+    watering: 2,
+    fertilization: 'Feed in the springtime with slow-release pellets or weekly during growing season with liquid fertilizer. ',
+    mist: 1,
+    soil: 'well-drained, rich potting mix',
+    toxicity: 'non toxic',
+    extra_info: 'The biggest drawbacks are their size—they grow to 5 to 6 feet tall—and the fact that the plants need three to five years before they flower.'
+  },
 ]
 
 

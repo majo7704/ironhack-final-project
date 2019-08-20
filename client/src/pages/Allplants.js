@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import MainLayout from "../components/layouts/MainLayout"
 import PlantList from "../components/PlantList"
 import axios from "axios"
-export default class Allplants extends Component {
+export default class AllPlants extends Component {
 
   state = {
     plantList: []

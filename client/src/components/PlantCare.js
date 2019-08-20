@@ -3,6 +3,8 @@ import React, { Component } from 'react'
 import axios from 'axios';  
 import "./PlantCare.css";
 import {Link} from "react-router-dom";
+import plus from '../assets/icons/add (1).svg'
+
 
 
 export default class PlantCare  extends Component {
@@ -29,6 +31,30 @@ export default class PlantCare  extends Component {
 
     })
   }
+
+  AddToCollection() {
+    
+    const { params } = this.props.match;
+    const plantId = params.id
+
+    return axios({
+        method: "POST",
+        baseURL: this.domain,
+        url: `${process.env.REACT_APP_API}/add/${plantId}`,
+        withCredentials: true,
+        headers: { 'content-type': 'application/x-www-form-urlencoded' },
+    })
+
+    .then((res)=> {
+      debugger
+      console.log(res);
+      this.props.history.push("/all")
+    })
+    
+    .catch(error => {
+      console.log(error)
+    })
+}
   
 
   render() {
@@ -37,16 +63,39 @@ export default class PlantCare  extends Component {
     <div>
       {this.state.plant ?
       <>
-      <div>
-        <h2>{this.state.plant.common_name}</h2>
-        <p>{this.state.plant.scientific_name}</p>
-      </div>
+      <header>
+        <div className="Plant-info-header">
+          <div>
+            <h2>{this.state.plant.common_name}</h2>
+            <p>{this.state.plant.scientific_name}</p>
+          </div>
+          <div>
+                <button className='pinkButton'>
+                  <Link to={"/myPlant"}>
+                    <img style={{width: '20px',height: '20px', color: "white" }} src={plus} alt="" />
+                  </Link>
+                </button>
+          </div>
+        </div>
+        <div className="Plant-info-white-links">
+          <div>
+            <img scr=".." alt="plant-logo"/>
+            <button onClick={() => {this.AddToCollection()}}>Add to my collection</button>
+           
+          </div>
+
+          <div>
+            <img scr="../" alt="heart-logo"/>
+            Add to my wish list
+          </div>
+        </div>
+      </header>
+   
 
       <div>
         <img className="Plant-image" src={this.state.plant.image_url} alt="plant_img" />
           <div className="Care-Plant-box">
-            <Link to={"/login"} className="Care-links">Care</Link>
-            <Link to={"/login"} className="Plant-links">My plant</Link>
+           Plant info
           </div>
       </div>    
 
