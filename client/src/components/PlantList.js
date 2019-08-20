@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 
 export default function PlantList(props) {
-  debugger
+  
   if (props.plants) {
     var plants = props.plants.map((plant) => {
       return (
@@ -16,13 +16,13 @@ export default function PlantList(props) {
       )
     })
     if (plants.length === 0) {
-      plants = <p>You've no plants. Sucker.</p>
+      plants = <p>You've no plants.</p>
     }
   } else {
     var plants = <p>You've no plants. Sucker.</p>
   } 
 
-  debugger
+ 
   return (
       <div>
         {plants}
