@@ -62,14 +62,18 @@ let protectRoute = function (req, res, next) {
 const usersRouter = require('./routes/users');
 const plantsRouter = require('./routes/plants');
 const plantCareRouter = require("./routes/plant-care");
+const myPlantCreateRouter = require("./routes/plant/myPlantCreate");
+const authRouter = require('./routes/auth-routes');
+
 
 
 app.use('/users', usersRouter);
 app.use("/plants", plantsRouter);
 app.use("/plant-care", plantCareRouter);
+app.use("/add", myPlantCreateRouter);
+app.use("/users", authRouter);
 
-app.use("/users", require('./routes/auth-routes'))
-app.use("/", protectRoute, upload.single('image'), require('./routes/myJungle'))
+app.use("/", upload.single('image'), require('./routes/myJungle'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

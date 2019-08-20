@@ -42,9 +42,8 @@ export default class Login extends Component {
             this.setState({error: ""})
           this.props.history.push("/all")
         })
-      .catch((error) => {
-         
-            this.setState({error: error.data.message})
+        .catch((error) => {
+         this.setState({error: error.data.message})
         })
   }
 
