@@ -3,11 +3,13 @@ import { Link } from 'react-router-dom'
 import { witthRouter } from 'react-router'
 import Header from './layouts/Header'
 import plus from '../assets/icons/add (1).svg'
-
 import "../css/Navbar.css"
 import Auth from '../utils/Auth'
+import PlantUtils from "../utils/Plants"
+
 const auth = new Auth();
 
+const plantUtils = new PlantUtils()
 
 
 export default class Navbar extends Component {
@@ -34,6 +36,8 @@ export default class Navbar extends Component {
   // }
   render() {
     const user = auth.getUser();
+    const numberOfPlants = auth.getUser().listOfCreatedPlants.length
+    debugger
     return (
       <div>
         <Header />
@@ -48,7 +52,8 @@ export default class Navbar extends Component {
                     }}
                   >
                     Plants
-                    <div className="number_box">32</div>
+                    <div className="number_box">{numberOfPlants}
+                    </div>
                   </p>
                 </Link>
               {/* <Link to={`/myJungle`}><p>Plants</p><p>{user.user.counter.plants}</p></Link>  */}
@@ -71,7 +76,7 @@ export default class Navbar extends Component {
             </div>
             <div>
               <button className='pinkButton'>
-                <Link to={"/myPlant"}>
+                <Link to={"/all"}>
                   <img style={{width: '20px',height: '20px', color: "white" }} src={plus} alt="" />
                 </Link>
               </button>

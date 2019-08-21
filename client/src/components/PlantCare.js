@@ -4,6 +4,10 @@ import axios from 'axios';
 import "./PlantCare.css";
 import {Link} from "react-router-dom";
 import plus from '../assets/icons/add (1).svg'
+import Auth from '../utils/Auth'
+
+const auth = new Auth();
+
 
 
 
@@ -43,14 +47,15 @@ export default class PlantCare  extends Component {
         url: `${process.env.REACT_APP_API}/add/${plantId}`,
         withCredentials: true,
         headers: { 'content-type': 'application/x-www-form-urlencoded' },
-    })
 
-    .then((res)=> {
-      debugger
-      console.log(res);
-      this.props.history.push("/all")
     })
-    
+    .then((res)=> {
+      return auth.setUser(res.data)
+    })
+    .then(() => {
+      const userId = auth.getUser()._id
+      this.props.history.push(`/myJungle/${userId}`)  
+    })
     .catch(error => {
       console.log(error)
     })

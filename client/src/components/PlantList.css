@@ -1,0 +1,25 @@
+.Plant-List-image {
+  border-radius: 50%;
+  width: 20%;
+  height: auto;
+}
+
+.Plant-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 5%;
+}
+
+hr {
+  width: 85%;
+  height: 0px;
+  color: #c2c2c2;
+}
+
+.Plant-Common-Name {
+  font-family: Montserrat;
+  font-size: 16px;
+  color: #191818;
+}

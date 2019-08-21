@@ -3,26 +3,32 @@ import React, { Component } from 'react'
 import MainLayout from '../components/layouts/MainLayout'
 import '../css/Navbar.css'
 import axios from "axios"
+import PlantUtils from "../utils/Plants.js"
+import Auth from '../utils/Auth'
+
+const auth = new Auth();
+const plantUtils = new PlantUtils()
 export default class myJungle extends Component {
   state = {
-    plantList: null,
-    count: 0
+    userPlants: null,
   }
-  incrementCount(){
-    this.setState({count:this.state.plantList + 1})
-  }
-  decrementCount() {
-    this.setState({ count: this.state.plantList - 1 })
-  }
+
   componentDidMount() {
+
+      const userId = auth.getUser()._id
+    debugger
+
     axios({
       method: 'GET',
-      url: `${process.env.REACT_APP_API}/myJungle`,
-      withCredentials: true // here's the juice!
+      url: `${process.env.REACT_APP_API}/user-plants/${userId}`,
+      withCredentials: true 
     })
       .then(response => {
-       
-        this.setState({ plantList: [...response.data.wishListPlants, ...response.data.listOfCreatedPlants ]})
+        debugger
+         plantUtils.setPlants(response.data)
+         this.setState({ 
+           userPlants: response.data, 
+        });
       })
       .catch(err => {
        
@@ -35,8 +41,8 @@ export default class myJungle extends Component {
     return (
       <MainLayout>
         {
-          this.state.plantList ?
-            <PlantList plants={this.state.plantList} /> :
+          this.state.userPlants ?
+            <PlantList plants={this.state.userPlants} /> :
             <p>Loading</p>
         }
       </MainLayout>
