@@ -64,6 +64,7 @@ const plantsRouter = require('./routes/plants');
 const plantCareRouter = require("./routes/plant-care");
 const myPlantCreateRouter = require("./routes/plant/myPlantCreate");
 const authRouter = require('./routes/auth-routes');
+const userPlantsRouter = require("./routes/plant/user-plants")
 
 
 
@@ -72,6 +73,7 @@ app.use("/plants", plantsRouter);
 app.use("/plant-care", plantCareRouter);
 app.use("/add", myPlantCreateRouter);
 app.use("/users", authRouter);
+app.use("/user-plants", userPlantsRouter)
 
 app.use("/", upload.single('image'), require('./routes/myJungle'));
 

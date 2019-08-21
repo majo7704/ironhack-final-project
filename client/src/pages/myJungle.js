@@ -5,7 +5,7 @@ import '../css/Navbar.css'
 import axios from "axios"
 export default class myJungle extends Component {
   state = {
-    plantList: null,
+    userPlants: null,
     count: 0
   }
   incrementCount(){
@@ -17,12 +17,13 @@ export default class myJungle extends Component {
   componentDidMount() {
     axios({
       method: 'GET',
-      url: `${process.env.REACT_APP_API}/myJungle`,
-      withCredentials: true // here's the juice!
+      url: `${process.env.REACT_APP_API}/user-plants`,
+      withCredentials: true 
     })
       .then(response => {
+         this.setState({ userPlants: response.data })
        
-        this.setState({ plantList: [...response.data.wishListPlants, ...response.data.listOfCreatedPlants ]})
+        // this.setState({ plantList: [...response.data.wishListPlants, ...response.data.listOfCreatedPlants ]})
       })
       .catch(err => {
        
@@ -35,8 +36,8 @@ export default class myJungle extends Component {
     return (
       <MainLayout>
         {
-          this.state.plantList ?
-            <PlantList plants={this.state.plantList} /> :
+          this.state.userPlants ?
+            <PlantList plants={this.state.userPlants} /> :
             <p>Loading</p>
         }
       </MainLayout>
