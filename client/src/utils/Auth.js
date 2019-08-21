@@ -18,6 +18,7 @@ export default class Auth {
             data: qs.stringify({ username, password })
         })
         .then((response)=> {
+            debugger
             this.setUser(response.data)
         })
     }
@@ -53,6 +54,10 @@ export default class Auth {
     getUser(){
         return JSON.parse(localStorage.getItem('user'));
     }
+
+    // setUserId(){
+    //     localStorage.setItem('user_id', JSON.stringify(user));
+    // }
 
     logout(){
        return axios({

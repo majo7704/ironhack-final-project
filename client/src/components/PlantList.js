@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+import "./PlantList.css";
 
 export default function PlantList(props) {
   
@@ -7,11 +8,16 @@ export default function PlantList(props) {
     var plants = props.plants.map((plant) => {
       return (
         <Link to={`/plantCare/${plant._id}`} >
-          <div>
-            <img src={plant.image_url} alt="plant_img" />
-            <h3>{plant.common_name}</h3>
-            <p>{plant.scientific_name}</p>
+          <div className="Plant-box">
+            <img className="Plant-List-image" src={plant.image_url} alt="plant_img" />
+            <div>
+              <h3 className="Plant-Common-Name">{plant.common_name}</h3>
+              <p>{plant.scientific_name}</p>
+            </div>
           </div>
+        
+          <hr></hr>
+        
         </Link>
       )
     })

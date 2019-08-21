@@ -6,9 +6,11 @@ const router = express.Router();
 
 
 const UserPlants = require('../../models/PlantOfUser.js')
-router.get('/', (req, res, next) => {
-  UserPlants.find({})
+router.get('/:user_id', (req, res, next) => {
+  debugger
+  UserPlants.find({user: req.params.user_id})
       .then((userplants) => {
+        console.log(userplants)
         res.json(userplants)
       })
       .catch(err => {

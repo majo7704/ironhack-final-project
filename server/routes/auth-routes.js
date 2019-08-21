@@ -25,6 +25,7 @@ router.post('/signup', function (req, res, next) {
 })
 
 router.post("/login", function (req, res) {
+  debugger
   User.find({ $or: [{ username: req.body.username }, { email: req.body.email }] })
     .then((user) => {
       if (user) {
@@ -33,7 +34,7 @@ router.post("/login", function (req, res) {
           if (match) {
             req.session.user = user[0];
             debugger
-            res.status(200).send({message: 'Logged in'})
+            res.status(200).send(user[0])
           }
         })
       } else {
@@ -41,10 +42,7 @@ router.post("/login", function (req, res) {
       }
     })
     .catch((error) => {
-      res.send(`${error}`,
-        res.status(401).send({ error: "Unathorized" }), 
-        res.status(500).send({message: "Internal Server Error"})
-      )
+      res.status(500).send({message: "Internal Server Error"})
   })
   
 })

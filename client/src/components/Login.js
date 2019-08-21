@@ -39,10 +39,13 @@ export default class Login extends Component {
     auth.login(this.state.user.username, this.state.user.password)
         .then(()=> {
           debugger
+          const userId = auth.getUser()._id
+
             this.setState({error: ""})
-          this.props.history.push("/all")
-        })
+            this.props.history.push(`/myJungle/${userId}`)  
+          })
         .catch((error) => {
+          debugger
          this.setState({error: error.data.message})
         })
   }
