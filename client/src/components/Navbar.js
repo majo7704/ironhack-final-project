@@ -33,6 +33,7 @@ export default class Navbar extends Component {
   //   localStorage.setItem('length', 32)
   //   debugger
   //   JSON.parse(localStorage.getItem('length'))
+  
   // }
   render() {
     const user = auth.getUser();

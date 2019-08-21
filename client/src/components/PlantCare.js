@@ -3,10 +3,13 @@ import React, { Component } from 'react'
 import axios from 'axios';  
 import "./PlantCare.css";
 import {Link} from "react-router-dom";
-import plus from '../assets/icons/add (1).svg'
+import exit from '../assets/icons/cancel.svg'
+import like from '../assets/icons/like.svg'
+import leaf from '../assets/icons/leaf.svg'
 import Auth from '../utils/Auth'
 
 const auth = new Auth();
+
 
 
 
@@ -77,20 +80,20 @@ export default class PlantCare  extends Component {
           <div>
                 <button className='pinkButton'>
                   <Link to={"/myPlant"}>
-                    <img style={{width: '20px',height: '20px', color: "white" }} src={plus} alt="" />
+                    <img style={{width: '20px',height: '20px', color: "white" }} src={exit} alt="" />
                   </Link>
                 </button>
           </div>
         </div>
         <div className="Plant-info-white-links">
           <div>
-            <img scr=".." alt="plant-logo"/>
+                 <img style={{ width: '30px', height: '30px', padding: '0 1% 0 0' }} src={leaf} alt="plant-logo"/>
             <button onClick={() => {this.AddToCollection()}}>Add to my collection</button>
            
           </div>
 
           <div>
-            <img scr="../" alt="heart-logo"/>
+                 <img style={{ width: '25px', height: '25px' , padding:'1% 1% 0 0'}} src={like} alt="heart-logo"/>
             Add to my wish list
           </div>
         </div>

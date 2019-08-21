@@ -12,7 +12,7 @@ const myPlantsSchema = new Schema({
   },
   cool_name: String,
   location: String,
-  buying_dtae: Date,
+  buying_date: Date,
   size: Number,
   pot_diameter: Number,
   report_date: Date,

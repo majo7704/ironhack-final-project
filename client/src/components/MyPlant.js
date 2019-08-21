@@ -19,14 +19,19 @@ class MyPlant extends Component {
       size: '',
       pot_diameter: '',
       repot_date: '',
-      notes: ''
+      notes: '',
+      selectedFile: 'null'
     }
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
   }
 
+  
+
   handleFormChange = (e)=> {
     this.setState({ 
-        [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
+      // selectedFile: event.target.files[0],
+      // loaded: 0
     })
   }
   
@@ -35,12 +40,10 @@ class MyPlant extends Component {
     let form = new FormData(this.formRef.current);
     axios({
         method: "POST",
-        headers: { 'content-type': 'application/x-www-form-urlencoded' },
         url: `${process.env.REACT_APP_API}/newPlant`,
         withCredentials: true,
         data: form
       })
-
       .then((response)=> {
         this.props.history.push("/PlantList")
       })
@@ -225,11 +228,14 @@ class MyPlant extends Component {
               </button>
             </div>
             <div>
-              <input
+              <button type="submit" className="btn-validate">
+                Upload
+              {/* <input
                 type="submit"
                 value="Validate"
                 className="btn-validate"
-              />
+                /> */}
+              </button>
             </div>
           </div>
         </form>

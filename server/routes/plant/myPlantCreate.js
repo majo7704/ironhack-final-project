@@ -7,10 +7,9 @@ const User = require('../../models/User')
 
 
 router.post('/:scientificPlantId', (req, res, next) => {
-debugger
+
   ScientificPlant.findById(req.params.scientificPlantId)
     .then((scientificPlant)=> {
-      debugger
         const newPlant = {
         scientific_plant: mongoose.Types.ObjectId(req.params.scientificPlantId),
         user: mongoose.Types.ObjectId(req.session.user._id),
@@ -28,7 +27,7 @@ debugger
       return PlantOfUser.create(newPlant)
     })
     .then((userPlant) => {
-      debugger
+
       return User.findByIdAndUpdate(req.session.user._id, { $push: {listOfCreatedPlants: userPlant._id} }, {new : true})
       // .populate("listOfCreatedPlants")
     })

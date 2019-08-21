@@ -1,6 +1,6 @@
 import React from 'react'
 import leaf from '../assets/icons/leaf.svg'
-import loop from '../assets/icons/add (1).svg'
+import loop from '../assets/icons/search.svg'
 import schedule from '../assets/icons/calendar.svg'
 import user from '../assets/icons/user.svg'
 

@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const PlantOfUser = require('../models/PlantOfUser')
-
-
-
+const multer = require('multer')
+const cors = require('cors')
 
 //All plants
 const Plants = require('../models/Plant.js')
+
 router.get('/all', (req, res, next) => {
     Plants.find({})
       .then((plants) => {
@@ -18,30 +18,6 @@ router.get('/all', (req, res, next) => {
   }
 )
 
-// router.post('/add', (req, res) => {
-//   //probably to delete
-//   let newPlant = {
-//     common_name: req.body.common_name,
-//     image_url: req.body.image_url,
-//     scientific_name: req.body.scientific_name,
-//     light_expousure: req.body.light_expousure,
-//     temperature: req.body.temperature,
-//     watering: req.body.watering,
-//     fertilization: req.body.fertilization,
-//     mist: req.body.mist,
-//     soil: req.body.soil,
-//     toxicity: req.body.toxicity,
-//     extra_info: req.body.extra_info
-//   }
-//   Plant.create(newPlant)
-//     .then(() => {
-//     res.send(newPlant)
-//     })
-//     .catch((err) => {
-//     console.log('err')
-//   })
-// })
-
 router.get('/edit', (req, res, next) => {
   PlantOfUser.findById(req.query.id)
     .populate('common_name')
@@ -49,6 +25,7 @@ router.get('/edit', (req, res, next) => {
     res.send(plant)
   })
 })
+
 router.post('/edit/:id', (req, res, next) => {
   
   //edit form (second step)
@@ -72,6 +49,29 @@ router.post('/edit/:id', (req, res, next) => {
       next()
     })
 })
+
+let storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'public/images')
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + '-'+file.originalname)
+  }
+})
+let upload = multer({ storage: storage }).single('picture') 
+router.post('/upload', function (req, res) {
+  debugger
+  upload(req, res, function(err){
+    if(err instanceof multer.MulterError){
+      return res.status(500).json(err)
+    } else if (err) {
+      return res.status(500).json(err)
+    }
+    return res.status(200).send(req.file)
+  })
+})
+
+
 router.get('/search', (req, res, next) => {
   Plants.find({ $text: { $search: req.query.q } })
     .then((plants) => {
@@ -83,6 +83,8 @@ router.get('/search', (req, res, next) => {
     next(createError(500))
   })
 })
+
+
 router.get('/:plantId', (req, res, next) => {
   Plants.findById(req.params.plantId)
     .then((plant) => {

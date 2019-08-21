@@ -4,11 +4,17 @@ footer {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
+  background-color: #e0e1f3;
+  padding: 2% 0 5% 2%;
 }
 
 footer .footer-item {
   max-height: 10vh;
+  box-sizing: border-box;
+  
 }
 footer .footer-item .icon {
   max-height: 10vh;
+  width: 40px;
+  
 }
