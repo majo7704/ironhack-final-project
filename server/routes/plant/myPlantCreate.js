@@ -5,10 +5,9 @@ const PlantOfUser = require('../../models/PlantOfUser')
 const ScientificPlant = require('../../models/Plant')
 
 router.post('/:scientificPlantId', (req, res, next) => {
-debugger
+
   ScientificPlant.findById(req.params.scientificPlantId)
     .then((scientificPlant)=> {
-      debugger
         const newPlant = {
         scientific_plant: mongoose.Types.ObjectId(req.params.scientificPlantId),
         user: mongoose.Types.ObjectId(req.session.user._id),
@@ -26,7 +25,7 @@ debugger
       return PlantOfUser.create(newPlant)
     })
     .then((userPlant) => {
-      debugger
+     
       res.send(userPlant)
     })
     .catch((error) => {

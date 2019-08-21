@@ -10,3 +10,7 @@
   padding: 10px;
   position: absolute;
 }
+
+img.searchBubble {
+ position: absolute;
+}

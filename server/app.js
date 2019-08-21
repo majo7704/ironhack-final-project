@@ -11,7 +11,7 @@ const mongoose = require('mongoose');
 const session = require('express-session')
 const MongoStore = require('connect-mongo')(session)
 const cors = require('cors')
-
+const User = require("./models/User")
 app.use(cors({
   origin: true, //sendig the cookies back and forth
   credentials: true
@@ -52,28 +52,33 @@ app.use(bodyParser.urlencoded({
 
 app.use(cookieParser());
 
-let protectRoute = function (req, res, next) {
- 
-  if (req.session.user) next();
-  // else res.redirect("/login")
+let protect = function (req, res, next) {
+  if (req.session.user) {
+    // refersh session data
+    User.findById(req.session.user._id)
+      .then((user) => {
+        req.session.user = user;
+        next();
+      })
+      .catch((error) => {
+        createError(500, error.message)
+      })
+  }
   else res.status(403).json({errorMessage: "Unauthorized"})
 }
 
-const usersRouter = require('./routes/users');
 const plantsRouter = require('./routes/plants');
 const plantCareRouter = require("./routes/plant-care");
 const myPlantCreateRouter = require("./routes/plant/myPlantCreate");
 const authRouter = require('./routes/auth-routes');
 
-
-
-app.use('/users', usersRouter);
-app.use("/plants", plantsRouter);
-app.use("/plant-care", plantCareRouter);
-app.use("/add", myPlantCreateRouter);
+app.use("/plants", plantsRouter); //upload file setup
+app.use("/plant-care", plantCareRouter); 
+app.use("/add", protect, myPlantCreateRouter);
 app.use("/users", authRouter);
 
-app.use("/", upload.single('image'), require('./routes/myJungle'));
+app.use('/api', require('./routes/file-upload-routes'))
+app.use("/", protect, require('./routes/myJungle'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -83,7 +88,7 @@ app.use(function(req, res, next) {
 // error handler
 app.use(function (err, req, res, next) {
 
-
+  debugger
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

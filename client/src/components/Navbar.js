@@ -31,6 +31,7 @@ export default class Navbar extends Component {
   //   localStorage.setItem('length', 32)
   //   debugger
   //   JSON.parse(localStorage.getItem('length'))
+  
   // }
   render() {
     const user = auth.getUser();
@@ -48,7 +49,7 @@ export default class Navbar extends Component {
                     }}
                   >
                     Plants
-                    <div className="number_box">32</div>
+                    <div className="number_box">'32'</div>
                   </p>
                 </Link>
               {/* <Link to={`/myJungle`}><p>Plants</p><p>{user.user.counter.plants}</p></Link>  */}

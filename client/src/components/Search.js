@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import '../css/Search.css'
 import loop from '../assets/icons/search.svg'
 import PlantList from './PlantList';
+import bubble from '../assets/icons/pinkBubble.png'
 
 export default class Search extends Component {
     render() {
@@ -18,7 +19,7 @@ export default class Search extends Component {
                   className="searchField"
                   type="text"
                 />
-            </form>
+          </form>
           </>
           )
         }
