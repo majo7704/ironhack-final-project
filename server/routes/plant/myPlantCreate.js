@@ -3,6 +3,8 @@ const router = express.Router()
 const mongoose = require("mongoose")
 const PlantOfUser = require('../../models/PlantOfUser')
 const ScientificPlant = require('../../models/Plant')
+const User = require('../../models/User')
+
 
 router.post('/:scientificPlantId', (req, res, next) => {
 
@@ -25,8 +27,12 @@ router.post('/:scientificPlantId', (req, res, next) => {
       return PlantOfUser.create(newPlant)
     })
     .then((userPlant) => {
-     
-      res.send(userPlant)
+
+      return User.findByIdAndUpdate(req.session.user._id, { $push: {listOfCreatedPlants: userPlant._id} }, {new : true})
+      // .populate("listOfCreatedPlants")
+    })
+    .then(updatedUser => {
+      res.send(updatedUser)
     })
     .catch((error) => {
       debugger

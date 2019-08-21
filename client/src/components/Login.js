@@ -38,11 +38,12 @@ export default class Login extends Component {
     e.preventDefault();
     auth.login(this.state.user.username, this.state.user.password)
         .then(()=> {
-    
+          const userId = auth.getUser()._id
             this.setState({error: ""})
-          this.props.history.push("/all")
-        })
+            this.props.history.push(`/myJungle/${userId}`)  
+          })
         .catch((error) => {
+          debugger
          this.setState({error: error.data.message})
         })
   }
