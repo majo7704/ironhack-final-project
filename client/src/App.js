@@ -4,10 +4,8 @@ import {Route, Switch} from "react-router-dom";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import Logout from "./components/Logout";
-import PlantList from "./components/PlantList";
 import MyPlant from "./components/MyPlant";
-import Header from './components/layouts/Header'
-import PlantCare from "./components/PlantCare";
+import ScientificPlantCare from "./components/ScientificPlantCare";
 import myJungle from './pages/myJungle'
 // import Navbar from "./components/Navbar"
 // import Facebook from './components/Facebook'
@@ -16,6 +14,8 @@ import globalStyles from '../src/assets/styles/global.css'
 import FindYourPlant from './pages/FindYourPlant';
 import AllPlants from './pages/AllPlants';
 import SearchPlants from './pages/SearchPlants';
+import Wishlist from './pages/WishList';
+
 
 
 
@@ -30,8 +30,10 @@ function App() {
         <Route path="/all" component={AllPlants} /> 
         <Route path="/myPlant" component={MyPlant} />  
         <Route path='/myJungle/:user_id' component={myJungle} />
-        <Route path="/plantCare/:id" component={PlantCare} /> 
+        <Route path="/scientificPlantCare/:id" component={ScientificPlantCare} /> 
         <Route path='/search' component={SearchPlants}/>
+        <Route path='/myWishlist/:user_id' component={Wishlist}/>
+
       </Switch>
     
     </div>

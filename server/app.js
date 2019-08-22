@@ -72,12 +72,19 @@ const plantCareRouter = require("./routes/plant-care");
 const myPlantCreateRouter = require("./routes/plant/myPlantCreate");
 const authRouter = require('./routes/auth-routes');
 const userPlantsRouter = require("./routes/plant/user-plants")
+const wishlistCreateRouter = require("./routes/wishlist/wishlist-create")
+const wishlistPlantsRouter = require("./routes/wishlist/wishlist-plants")
+
+
 
 app.use("/plants", plantsRouter); //upload file setup
 app.use("/plant-care", plantCareRouter); 
 app.use("/add", protect, myPlantCreateRouter);
 app.use("/users", authRouter);
 app.use("/user-plants", userPlantsRouter)
+app.use("/user-wishlist", wishlistCreateRouter)
+app.use("/user-wishlist-plants", wishlistPlantsRouter)
+
 
 app.use('/api', require('./routes/file-upload-routes'))
 app.use("/", protect, require('./routes/myJungle'));
