@@ -4,7 +4,8 @@ import Navbar from "./Navbar"
 import "./MyPlant.css"
 import MainLayout from './layouts/MainLayout';
 import React, { Component } from 'react';
-import axios from "axios";; 
+import axios from "axios";
+import service from "../api/service";
 
 // import Footer from './Footer'
 
@@ -20,11 +21,26 @@ class MyPlant extends Component {
       pot_diameter: '',
       repot_date: '',
       notes: '',
-      selectedFile: 'null'
+      selectedFile: 'null',
+      image_url: 'image_url'
     }
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
   }
+  handleFileUpload = e => {
+    console.log("The file to be uploaded is: ", e.target.files[0]);
 
+    const uploadData = new FormData();
+    uploadData.append('image_url', e.target.files[0]);
+
+    service.handleUpload(uploadData)
+      .then(response => {
+        console.log('response is:', response);
+        this.setState({ image_url: response.secure_url });
+      })
+      .catch(err => {
+        console.log('Error while uploading the file: ', err)
+      });
+  }
   
 
   handleFormChange = (e)=> {
@@ -34,21 +50,53 @@ class MyPlant extends Component {
       // loaded: 0
     })
   }
-  
-  handleFormSubmit = (e)=> {
-    e.preventDefault(); 
-    let form = new FormData(this.formRef.current);
-    axios({
-        method: "POST",
-        url: `${process.env.REACT_APP_API}/newPlant`,
-        withCredentials: true,
-        data: form
+  handleSubmit = e => {
+    e.preventDefault();
+
+    service.saveNewThing(this.state)
+      .then(res => {
+        console.log('added: ', res);
       })
-      .then((response)=> {
+      .catch(err => {
+        console.log('Error while adding the thing: ', err);
+    })
+  }
+
+  // handleFormSubmit = (e)=> {
+  //   e.preventDefault(); 
+  //   let form = new FormData(this.formRef.current);
+  //   axios({
+  //       method: "POST",
+  //       url: `${process.env.REACT_APP_API}/newPlant`,
+  //       withCredentials: true,
+  //       data: form
+  //     })
+  //     .then((response)=> {
+  //       this.props.history.push("/PlantList")
+  //     })
+  //     .catch((error)=> {
+  //       this.setState({error: error.message})
+  //     })
+  // }
+
+  handleFormSubmit = (e) => {
+    e.preventDefault();
+    let form = new FormData(this.formRef.current);
+    let { plantId } = this.props.match.params
+   
+    axios({
+      method: "POST",
+      url: `${process.env.REACT_APP_API}/newPlant/${plantId}`,
+      withCredentials: true,
+      data: form
+    })
+      .then((response) => {
+        
         this.props.history.push("/PlantList")
       })
-      .catch((error)=> {
-        this.setState({error: error.message})
+      .catch((error) => {
+       
+        this.setState({ error: error.message })
       })
   }
 
@@ -83,7 +131,6 @@ class MyPlant extends Component {
           className="form"
           onSubmit={this.handleFormSubmit}
           ref={this.formRef}
-          onSubmit={this.handleFormSubmit}
         >
           <div className="coolInput">
             <label
@@ -152,8 +199,8 @@ class MyPlant extends Component {
               >
                 Size
               </label>
-              <input
-                type="text"
+              <input style={{width:'70%'}}
+                type="number"
                 name="size"
                 placeholder="15 cm"
                 checked={this.state.size}
@@ -170,11 +217,13 @@ class MyPlant extends Component {
               >
                 Pot diameters
               </label>
-              <input
+              <input 
                 style={{
                   fontFamily: "Montserrat",
                   fontWeight: "bold",
-                  margin: "0"
+                  
+                  width: "100%",
+                  float: 'right'
                 }}
                 type="number"
                 name="pot_diameter"
@@ -224,7 +273,7 @@ class MyPlant extends Component {
             <div className="Box-container">
               <button className="Add-image">
                 {/* <img src={} alt=""/> */}
-                <input type="file" name="picture" />
+                <input type="file" name="image_url" onChange={this.handleFormChange} />
               </button>
             </div>
             <div>

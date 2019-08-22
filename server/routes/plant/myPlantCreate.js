@@ -35,7 +35,7 @@ router.post('/:scientificPlantId', (req, res, next) => {
       res.send(updatedUser)
     })
     .catch((error) => {
-      debugger
+      
       console.log(error);
       next()
     })

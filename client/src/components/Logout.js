@@ -8,10 +8,12 @@ export default class Logout extends Component {
     }
     componentDidMount(){
         auth.logout()
-            .then(()=> {
+            .then(() => {
+                
                 this.props.history.push("/login");
             })
-            .catch((error)=> {
+            .catch((error) => {
+                
                 this.setState({error: error.message});
             })
     }

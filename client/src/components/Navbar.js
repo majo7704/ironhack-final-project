@@ -38,7 +38,6 @@ export default class Navbar extends Component {
   render() {
     const user = auth.getUser();
     const numberOfPlants = auth.getUser().listOfCreatedPlants.length
-    debugger
     return (
       <div>
         <Header />
