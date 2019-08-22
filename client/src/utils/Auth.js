@@ -65,7 +65,8 @@ export default class Auth {
             url: "/users/logout",
             withCredentials: true,
         })
-        .then((res)=> {
+           .then((res) => {
+            debugger
             localStorage.removeItem('user');
         })
     }    
