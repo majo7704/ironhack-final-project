@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const createError = require('http-errors');
 const Plant = require('../models/Plant')
 const User = require('../models/User')
 const PlantOfUser = require('../models/PlantOfUser')
@@ -19,12 +20,13 @@ router.get('/myJungle', (req, res, next) => {
   })
 })
 const uploader = require('../configs/cloudinary-setup')
+//route for file uploads!!!!
 router.post("/newPlant/:id", uploader.single("image_url"), (req, res, next) => {
   //click on button "Add to my collection"(first step)
-  debugger
+  
   let plantIds = req.session.user.listOfCreatedPlants.map((plantObjectId) => plantObjectId.toString())
   if (!plantIds.includes(req.params.id)) {
-    debugger
+   
     next(createError(403, "This is not your plant, buddy."))
   } else {
     let newPlant = {
@@ -43,11 +45,8 @@ router.post("/newPlant/:id", uploader.single("image_url"), (req, res, next) => {
 
     PlantOfUser.findByIdAndUpdate(req.params.id, newPlant)
       .then((plant) => {
-        return User.findByIdAndUpdate(req.session.user._id, {
-          $push: { listOfCreatedPlants: plant._id }
-        }, {
-            new: true
-          })
+        return User.findById(req.session.user._id)
+          .populate("listOfCreatedPlants")
       })
       .then((user) => {
         res.json(user)
@@ -68,6 +67,6 @@ router.post('/wish', (req, res, next) => {
     
   }
 })
-//route to edit my plant
+
 
 module.exports = router;
