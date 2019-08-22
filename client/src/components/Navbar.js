@@ -28,20 +28,13 @@ export default class Navbar extends Component {
       this.setState({error:error.message})
     })
   }
-  // componentDidMount() {
-  //   localStorage.setItem('length', 32)
-  //   debugger
-  //   JSON.parse(localStorage.getItem('length'))
-  
-  // }
+
   render() {
     const user = auth.getUser();
     const numberOfPlants = auth.getUser().listOfCreatedPlants.length
     const numberOfWish = auth.getUser().wishListPlants.length
     const userId = auth.getUser()._id
 
-
-    debugger
     return (
       <div>
         <nav className="Nav">

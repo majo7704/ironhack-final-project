@@ -16,17 +16,15 @@ export default class myJungle extends Component {
   }
 
   componentDidMount() {
-
-      const userId = auth.getUser()._id
-    debugger
-
+    const userId = auth.getUser()._id
+    
     axios({
       method: 'GET',
       url: `${process.env.REACT_APP_API}/user-plants/${userId}`,
       withCredentials: true 
     })
       .then(response => {
-        debugger
+        
          plantUtils.setPlants(response.data)
          this.setState({ 
            userPlants: response.data, 

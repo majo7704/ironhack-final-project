@@ -16,9 +16,7 @@ export default class myJungle extends Component {
   }
 
   componentDidMount() {
-    debugger
-      const userId = auth.getUser()._id
-    debugger
+    const userId = auth.getUser()._id
 
     axios({
       method: 'GET',
@@ -26,8 +24,7 @@ export default class myJungle extends Component {
       withCredentials: true 
     })
       .then(response => {
-        debugger
-         plantUtils.setPlants(response.data)
+             plantUtils.setPlants(response.data)
          this.setState({ 
            userPlants: response.data, 
         });
