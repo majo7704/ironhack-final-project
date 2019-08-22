@@ -43,7 +43,7 @@ export default class Login extends Component {
             this.props.history.push(`/myJungle/${userId}`)  
           })
         .catch((error) => {
-          debugger
+          
          this.setState({error: error.data.message})
         })
   }

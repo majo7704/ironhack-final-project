@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import leaf from '../assets/icons/leaf.svg'
 import loop from '../assets/icons/search.svg'
 import schedule from '../assets/icons/calendar.svg'
@@ -15,7 +16,7 @@ export default function Footer() {
       </div>
       <div className="footer-item">
         <img className="icon" src={loop} />
-        <p>Plant search</p>
+        <Link to={'/search'}><p>Plant search</p> </Link>
       </div>
       <div className="footer-item">
         <img className="icon" src={schedule} />

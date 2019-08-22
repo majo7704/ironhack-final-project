@@ -28,12 +28,11 @@ function App() {
         <Route path="/login" component={Login} />  
         <Route path="/logout" component={Logout} />  
         <Route path="/all" component={AllPlants} /> 
-        <Route path="/myPlant" component={MyPlant} />  
+        <Route path="/myPlant/:plantId" component={MyPlant} />  
         <Route path='/myJungle/:user_id' component={myJungle} />
         <Route path="/scientificPlantCare/:id" component={ScientificPlantCare} /> 
         <Route path='/search' component={SearchPlants}/>
         <Route path='/myWishlist/:user_id' component={Wishlist}/>
-
       </Switch>
     
     </div>

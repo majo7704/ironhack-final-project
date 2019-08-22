@@ -5,7 +5,7 @@ export default class PlantUtils {
   }
 
   getCount() {
-    debugger
+   
     return JSON.parse(localStorage.getItem("plants")).length
   }
 

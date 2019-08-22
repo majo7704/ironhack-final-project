@@ -25,7 +25,7 @@ router.post('/signup', function (req, res, next) {
 })
 
 router.post("/login", function (req, res) {
-  debugger
+ 
   User.find({ $or: [{ username: req.body.username }, { email: req.body.email }] })
     .then((user) => {
       if (user) {
@@ -33,7 +33,7 @@ router.post("/login", function (req, res) {
           if (err) throw new Error("Encryption error");
           if (match) {
             req.session.user = user[0];
-            debugger
+            
             res.status(200).send(user[0])
           }
         })
@@ -48,9 +48,10 @@ router.post("/login", function (req, res) {
 })
 
 router.get('/logout', (req, res) => {
-  debugger
+  
   req.session.destroy(function (err) {
-    if(err) return next(err)
+    if (err) return next(err) 
   })
+  res.send("Logged out!")
 })
 module.exports = router;

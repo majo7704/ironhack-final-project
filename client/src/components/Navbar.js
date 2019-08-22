@@ -34,7 +34,6 @@ export default class Navbar extends Component {
     const numberOfPlants = auth.getUser().listOfCreatedPlants.length
     const numberOfWish = auth.getUser().wishListPlants.length
     const userId = auth.getUser()._id
-
     return (
       <div>
         <nav className="Nav">
