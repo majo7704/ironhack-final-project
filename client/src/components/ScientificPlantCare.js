@@ -14,7 +14,7 @@ const auth = new Auth();
 
 
 
-export default class PlantCare  extends Component {
+export default class ScientificPlantCare  extends Component {
   constructor(){
     super()
     this.state = {
@@ -34,8 +34,6 @@ export default class PlantCare  extends Component {
     .then(response => {
       
       this.setState({plant: response.data})
-      console.log(`${this.props}, ${this.plant}`)
-
     })
   }
 
@@ -63,6 +61,35 @@ export default class PlantCare  extends Component {
       console.log(error)
     })
 }
+
+AddToWishlist() {
+
+  debugger
+    
+  const { params } = this.props.match;
+  const plantId = params.id
+
+  return axios({
+      method: "POST",
+      baseURL: this.domain,
+      url: `${process.env.REACT_APP_API}/user-wishlist/${plantId}`,
+      withCredentials: true,
+      headers: { 'content-type': 'application/x-www-form-urlencoded' },
+
+  })
+  .then((res)=> {
+    debugger
+    return auth.setUser(res.data)
+  })
+  .then(() => {
+    debugger
+    const userId = auth.getUser()._id
+    this.props.history.push(`/myWishlist/${userId}`)  
+  })
+  .catch(error => {
+    console.log(error)
+  })
+}
   
 
   render() {
@@ -73,6 +100,7 @@ export default class PlantCare  extends Component {
       <>
       <header>
         <div className="Plant-info-header">
+
           <div>
             <h2>{this.state.plant.common_name}</h2>
             <p>{this.state.plant.scientific_name}</p>
@@ -87,14 +115,15 @@ export default class PlantCare  extends Component {
         </div>
         <div className="Plant-info-white-links">
           <div>
-                 <img style={{ width: '30px', height: '30px', padding: '0 1% 0 0' }} src={leaf} alt="plant-logo"/>
-            <button onClick={() => {this.AddToCollection()}}>Add to my collection</button>
+            <img style={{ width: '30px', height: '30px', padding: '0 1% 0 0' }} src={leaf} alt="plant-logo"/>
+            <button className="Link-button" onClick={() => {this.AddToCollection()}}>Add to my collection</button>
            
           </div>
 
           <div>
-                 <img style={{ width: '25px', height: '25px' , padding:'1% 1% 0 0'}} src={like} alt="heart-logo"/>
-            Add to my wish list
+            <img style={{ width: '25px', height: '25px' , padding:'1% 1% 0 0'}} src={like} alt="heart-logo"/>
+            <button className="Link-button" onClick={() => {this.AddToWishlist()}}> Add to my wish list</button>
+                
           </div>
         </div>
       </header>
@@ -102,7 +131,7 @@ export default class PlantCare  extends Component {
 
       <div>
         <img className="Plant-image" src={this.state.plant.image_url} alt="plant_img" />
-          <div className="Care-Plant-box">
+          <div className="Plant-info">
            Plant info
           </div>
       </div>    
@@ -110,20 +139,20 @@ export default class PlantCare  extends Component {
       <div className="All-boxes">
         <div className="Icon-box">
           <img className="Icon-image" src="../icon/sun.png" alt="sun_icon"/>
-          <p>Exposition</p>
-          <p>{this.state.plant.light_expousure}</p>
+          <p className="Title-box">Exposition</p>
+          <p className="Data-box">{this.state.plant.light_expousure}</p>
         </div>
 
         <div className="Icon-box">
           <img className="Icon-image" src="../icon/thermometer.png" alt="icon"/>
-          <p>Temperature</p>
-          <p>{this.state.plant.temperature}</p>
+          <p className="Title-box">Temperature</p>
+          <p className="Data-box">{this.state.plant.temperature}</p>
         </div>
       
         <div className="Icon-box"> 
           <img className="Icon-image" src="../icon/watering-can.png" alt="icon"/>
-          <p>Watering</p>
-          <p>{this.state.plant.watering}</p>
+          <p className="Title-box">Watering</p>
+          <p className="Data-box">{this.state.plant.watering}</p>
         </div>
 
       </div>
@@ -135,20 +164,20 @@ export default class PlantCare  extends Component {
       <div className="All-boxes">
         <div className="Icon-box"> 
           <img className="Icon-image" src="../icon/fertilizer.png" alt="icon"/>
-          <p>Fertilization</p>
-          <p>{this.state.plant.fertilization}</p>
+          <p className="Title-box">Fertilization</p>
+          <p className="Data-box">{this.state.plant.fertilization}</p>
         </div>
 
         <div className="Icon-box">      
           <img className="Icon-image" src="../icon/spray.png" alt="icon"/>
-          <p>Spray</p>
-          <p>{this.state.plant.mist}</p>
+          <p className="Title-box">Spray</p>
+          <p className="Data-box">{this.state.plant.mist}</p>
         </div>
 
         <div className="Icon-box">
           <img className="Icon-image" src="../icon/leaf.png" alt="icon"/>
-          <p>Soil</p>
-          <p>{this.state.plant.soil}</p>{this.state.plant.soil}
+          <p className="Title-box">Soil</p>
+          <p className="Data-box">{this.state.plant.soil}</p>
         </div>
 
       </div>
@@ -160,14 +189,14 @@ export default class PlantCare  extends Component {
       <div className="All-boxes">
         <div className="Icon-box">
           <img className="Icon-image" src="../icon/sun" alt="icon"/>
-          <p>Toxicity</p>
-          <p>{this.state.plant.toxicity}</p>
+          <p className="Title-box">Toxicity</p>
+          <p className="Data-box">{this.state.plant.toxicity}</p>
         </div>
 
         <div className="Icon-box">
           <img className="Icon-image" src="../icon/sun" alt="icon"/>
-          <p>Tips</p>
-          <p>{this.state.plant.extra_info}</p>
+          <p className="Title-box">Tips</p>
+          <p className="Data-box">{this.state.plant.extra_info}</p>
         </div>
       
       </div>

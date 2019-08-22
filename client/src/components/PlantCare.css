@@ -4,6 +4,26 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
+}
+
+.Plant-info {
+  height: 50px;
+  opacity: 0.3;
+  background-color: #e0e1f3;
+  font-family: 'Nunito';
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.Plant-info-header div h2 p {
+  font-family: Nunito;
+}
+
+.Plant-info-header div h2 {
+  font-size: 24px;
+
 }
 
 .Icon-box {
@@ -11,12 +31,14 @@
   display: flex;
   flex-direction: column;
   width: 30%;
-  height: 15rem;
+  height: 12rem;
 }
 
 .Icon-image {
-  width: 5em;
-  height: auto;
+  width: auto;
+  height: 2em;
+  object-fit: contain;
+  padding: 1em;
   align-self: center;
 }
 
@@ -25,6 +47,7 @@
   height: 8rem;
   width: 100vw;
   overflow: hidden;
+  display: block;
 }
 
 .Wave {
@@ -35,11 +58,13 @@
 
 .Plant-info-header {
   display: flex;
+  flex-direction: row;
   background-color: #1f234c;
   color: #ffffff;
   height: 80px;
   padding-bottom: 5%;
-  align-content: space-between;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   margin: 0;
 }
@@ -47,7 +72,7 @@
 .Plant-info-white-links {
   display: flex;
   flex-direction: column;
-  background-color: #ffffff;
+  background-color: #f0f0f0;
   color: #1f234c;
   border-radius: 0 0 0 50px;
   padding: 5%;
@@ -62,3 +87,30 @@
   border: none;
   border-radius: 14px;
 }
+
+.Link-button {
+  -webkit-appearance: none;
+  font-family: HelveticaNeue;
+  font-size: 18px;
+  color: #191818;
+  font-weight: 500;
+  background-color: #f0f0f0;
+  border: none;
+}
+
+.Title-box {
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 600;
+  color: #191818;
+}
+
+.Data-box {
+  font-family: Montserrat;
+  font-size: 12px;
+  color: #191818;
+  justify-content: center;
+  width: 7em;
+  align-self: center;
+}
+

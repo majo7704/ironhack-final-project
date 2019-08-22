@@ -2,7 +2,7 @@ import PlantList from '../components/PlantList'
 import React, { Component } from 'react'
 import MainLayout from '../components/layouts/MainLayout'
 import Navbar from '../components/Navbar'
-import HeaderJungle from '../components/layouts/HeaderJungle'
+import HeaderWishlist from '../components/layouts/HeaderWishlist'
 import '../css/Navbar.css'
 import axios from "axios"
 import PlantUtils from "../utils/Plants.js"
@@ -17,15 +17,14 @@ export default class myJungle extends Component {
 
   componentDidMount() {
     const userId = auth.getUser()._id
-    
+
     axios({
       method: 'GET',
-      url: `${process.env.REACT_APP_API}/user-plants/${userId}`,
+      url: `${process.env.REACT_APP_API}/user-wishlist-plants/${userId}`,
       withCredentials: true 
     })
       .then(response => {
-        
-         plantUtils.setPlants(response.data)
+             plantUtils.setPlants(response.data)
          this.setState({ 
            userPlants: response.data, 
         });
@@ -40,8 +39,8 @@ export default class myJungle extends Component {
     
     return (
       <div>
-        <HeaderJungle/>
-        <Navbar/>     
+        <HeaderWishlist/>
+        <Navbar/>        
         <MainLayout>
           {
             this.state.userPlants ?
