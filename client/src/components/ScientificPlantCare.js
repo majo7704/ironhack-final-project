@@ -9,6 +9,12 @@ import like from '../assets/icons/like.svg'
 import soil from '../assets/icons/soil.svg'
 import leaf from '../assets/icons/leaf.svg'
 import tip from '../assets/icons/tip.svg'
+import sun from '../assets/icons/sun.svg'
+import temperature from '../assets/icons/thermometer.svg'
+import watering from '../assets/icons/watering.svg'
+import fertilizer from '../assets/icons/fertillizer.svg'
+import spray from '../assets/icons/spray.svg'
+import wave from '../assets/icons/wave.svg'
 import Auth from '../utils/Auth'
 
 const auth = new Auth();
@@ -138,19 +144,19 @@ AddToWishlist() {
 
       <div className="All-boxes">
         <div className="Icon-box">
-          <img className="Icon-image" src="../icon/sun.png" alt="sun_icon"/>
+          <img className="Icon-image" src={sun} alt="sun_icon"/>
           <p className="Title-box">Exposition</p>
           <p className="Data-box">{this.state.plant.light_expousure}</p>
         </div>
 
         <div className="Icon-box">
-          <img className="Icon-image" src="../icon/thermometer.png" alt="icon"/>
+          <img className="Icon-image" src={temperature} alt="icon"/>
           <p className="Title-box">Temperature</p>
           <p className="Data-box">{this.state.plant.temperature}</p>
         </div>
       
         <div className="Icon-box"> 
-          <img className="Icon-image" src="../icon/watering-can.png" alt="icon"/>
+          <img className="Icon-image" src={watering} alt="icon"/>
           <p className="Title-box">Watering</p>
           <p className="Data-box">{this.state.plant.watering}</p>
         </div>
@@ -158,18 +164,18 @@ AddToWishlist() {
       </div>
 
       <div className="Wave">
-        <img src="../Images/fill-153.svg" alt="Wave" />
+        <img src={wave} alt="Wave" />
       </div>
 
       <div className="All-boxes">
         <div className="Icon-box"> 
-          <img className="Icon-image" src="../icon/fertilizer.png" alt="icon"/>
+          <img className="Icon-image" src={fertilizer} alt="icon"/>
           <p className="Title-box">Fertilization</p>
           <p className="Data-box">{this.state.plant.fertilization}</p>
         </div>
 
         <div className="Icon-box">      
-          <img className="Icon-image" src="../icon/spray.png" alt="icon"/>
+          <img className="Icon-image" src={spray} alt="icon"/>
           <p className="Title-box">Spray</p>
           <p className="Data-box">{this.state.plant.mist}</p>
         </div>
@@ -183,7 +189,7 @@ AddToWishlist() {
       </div>
 
       <div className="Wave">
-        <img src="../Images/fill-153.svg" alt="Wave" />
+        <img src={wave} alt="Wave" />
       </div>
 
       <div className="All-boxes">
