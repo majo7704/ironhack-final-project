@@ -103,7 +103,9 @@ export default class Login extends Component {
             />
             {/* reacts wants to be in charge of all the data   */}
           </div>
+
       {this.state.error && <p className="errorMsg">{this.state.error}</p>}
+      
           <p className="Forgotten-password">Forgotten password?</p>
 
           <div>
