@@ -35,7 +35,7 @@ class Signup extends Component {
     auth.signup(this.state.user)
         .then(()=> {
             this.setState({error: ""})
-            this.props.history.push("/myJungle")
+            this.props.history.push("/login")
         })
         .catch(({error})=> {
             this.setState({error: error.data.message})

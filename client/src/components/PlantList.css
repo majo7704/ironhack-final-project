@@ -11,6 +11,9 @@
   align-items: center;
   margin-top: 5%;
 }
+.Plant-name-box {
+  width: 200px;
+}
 
 hr {
   width: 85%;
