@@ -39,16 +39,14 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'build')));
 
 
-let upload = multer({ dest: "public/images" })
+let upload = multer({ dest: "public/images" });
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: false
-}))
-
-
+}));
 
 app.use(cookieParser());
 
@@ -90,10 +88,11 @@ app.use('/api/api', require('./routes/file-upload-routes'))
 app.use("/api/", protect, require('./routes/myJungle'));
 
 
-// app.get("*", (req, res, next) => {
-//   // If no routes match, send them the React HTML.
-//   res.sendFile(__dirname + "/public/index.html");
-// });
+app.get("*", (req, res, next) => {
+  debugger
+  // If no routes match, send them the React HTML.
+  res.sendFile(__dirname + "/build/index.html");
+});
 
 
 // catch 404 and forward to error handler

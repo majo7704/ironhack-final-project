@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.27559a76.chunk.css",
+    "main.js": "/static/js/main.94a389c7.chunk.js",
+    "main.js.map": "/static/js/main.94a389c7.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.ea92a0de.js",
+    "runtime~main.js.map": "/static/js/runtime~main.ea92a0de.js.map",
+    "static/js/2.58a4fb8b.chunk.js": "/static/js/2.58a4fb8b.chunk.js",
+    "static/js/2.58a4fb8b.chunk.js.map": "/static/js/2.58a4fb8b.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.f944b27937b3660cf6da3c0740f7a48d.js": "/precache-manifest.f944b27937b3660cf6da3c0740f7a48d.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.27559a76.chunk.css.map": "/static/css/main.27559a76.chunk.css.map",
+    "static/media/add (1).svg": "/static/media/add (1).cf5bf674.svg",
+    "static/media/calendar.svg": "/static/media/calendar.8091b243.svg",
+    "static/media/cancel.svg": "/static/media/cancel.48ecb8f6.svg",
+    "static/media/leaf.svg": "/static/media/leaf.22363380.svg",
+    "static/media/like.svg": "/static/media/like.67b78e13.svg",
+    "static/media/mimo@2x_clipped_rev_1.png": "/static/media/mimo@2x_clipped_rev_1.c176cde5.png",
+    "static/media/global.css": "/static/media/nunito-v11-latin-regular.de6068bf.woff2",
+    "static/media/pinkBubble.png": "/static/media/pinkBubble.88d60a4c.png",
+    "static/media/search.svg": "/static/media/search.ced53623.svg",
+    "static/media/soil.svg": "/static/media/soil.2e09012d.svg",
+    "static/media/tip.svg": "/static/media/tip.436426f1.svg",
+    "static/media/toxicity.svg": "/static/media/toxicity.9f614a67.svg",
+    "static/media/user.svg": "/static/media/user.be6e348f.svg"
+  }
+}

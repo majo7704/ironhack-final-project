@@ -16,7 +16,7 @@
     "start": "react-scripts start",
     "build-dev": "dotenv -e .env.development react-scripts build", 
     "build-prod": "dotenv -e .env.production react-scripts build",
-    "build": "react-scripts build",
+    "build": "react-scripts build && sudo rm -r ../server/build && mv build ../server",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

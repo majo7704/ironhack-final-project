@@ -121,9 +121,7 @@ export default class Login extends Component {
             </p>
           </div>
         </form>
-        <footer>
-          
-        </footer>
+        
       </div>
     );
   }
