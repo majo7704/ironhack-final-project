@@ -43,7 +43,7 @@ export default class Login extends Component {
           })
         .catch((error) => {
           
-         this.setState({error: error.data.message})
+         this.setState({error: error.message})
         })
   }
 
@@ -104,7 +104,7 @@ export default class Login extends Component {
             />
             {/* reacts wants to be in charge of all the data   */}
           </div>
-
+          {this.state.error && <p className="erroMsg">{this.state.error}</p>}
           <p className="Forgotten-password">Forgotten password?</p>
 
           <div>
