@@ -4,16 +4,14 @@ import axios from 'axios';
 import "./PlantCare.css";
 import {Link} from "react-router-dom";
 import exit from '../assets/icons/cancel.svg'
+import toxic from '../assets/icons/toxicity.svg'
 import like from '../assets/icons/like.svg'
+import soil from '../assets/icons/soil.svg'
 import leaf from '../assets/icons/leaf.svg'
+import tip from '../assets/icons/tip.svg'
 import Auth from '../utils/Auth'
 
 const auth = new Auth();
-
-
-
-
-
 export default class ScientificPlantCare  extends Component {
   constructor(){
     super()
@@ -44,7 +42,6 @@ export default class ScientificPlantCare  extends Component {
 
     return axios({
         method: "POST",
-        baseURL: this.domain,
         url: `${process.env.REACT_APP_API}/add/${plantId}`,
         withCredentials: true,
         headers: { 'content-type': 'application/x-www-form-urlencoded' },
@@ -71,18 +68,17 @@ AddToWishlist() {
 
   return axios({
       method: "POST",
-      baseURL: this.domain,
       url: `${process.env.REACT_APP_API}/user-wishlist/${plantId}`,
       withCredentials: true,
       headers: { 'content-type': 'application/x-www-form-urlencoded' },
 
   })
   .then((res)=> {
-    debugger
+   
     return auth.setUser(res.data)
   })
   .then(() => {
-    debugger
+   
     const userId = auth.getUser()._id
     this.props.history.push(`/myWishlist/${userId}`)  
   })
@@ -98,17 +94,19 @@ AddToWishlist() {
     <div>
       {this.state.plant ?
       <>
-      <header>
-        <div className="Plant-info-header">
+           <header>
+             <div className="Plant-info-header" style={{ display: 'flex', justifyContent:'space-around' }} >
 
-          <div>
-            <h2>{this.state.plant.common_name}</h2>
-            <p>{this.state.plant.scientific_name}</p>
+               <div style={{ width: '50%' }}>
+                 <h2 style={{
+                   margin: '2% 0 0 0', fontFamily: "Nunito",
+                   fontWeight: "bold" }}>{this.state.plant.common_name}</h2>
+                 <p style={{ margin: '5% 0 0 0' }}>{this.state.plant.scientific_name}</p>
           </div>
           <div>
-                <button className='pinkButton'>
-                  <Link to={"/myPlant"}>
-                    <img style={{width: '20px',height: '20px', color: "white" }} src={exit} alt="" />
+                <button className='pinkButton' >
+                  <Link to={"/search"}>
+                    <img style={{width: '20px',height: '20px', color: "white"}} src={exit} alt="" />
                   </Link>
                 </button>
           </div>
@@ -175,7 +173,7 @@ AddToWishlist() {
         </div>
 
         <div className="Icon-box">
-          <img className="Icon-image" src="../icon/leaf.png" alt="icon"/>
+          <img className="Icon-image" src={soil} alt="icon"/>
           <p className="Title-box">Soil</p>
           <p className="Data-box">{this.state.plant.soil}</p>
         </div>
@@ -188,13 +186,13 @@ AddToWishlist() {
 
       <div className="All-boxes">
         <div className="Icon-box">
-          <img className="Icon-image" src="../icon/sun" alt="icon"/>
+          <img className="Icon-image" src={toxic} alt="icon"/>
           <p className="Title-box">Toxicity</p>
           <p className="Data-box">{this.state.plant.toxicity}</p>
         </div>
 
         <div className="Icon-box">
-          <img className="Icon-image" src="../icon/sun" alt="icon"/>
+          <img className="Icon-image" src={tip} alt="icon"/>
           <p className="Title-box">Tips</p>
           <p className="Data-box">{this.state.plant.extra_info}</p>
         </div>

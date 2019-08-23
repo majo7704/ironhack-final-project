@@ -6,11 +6,12 @@
   font-size: 32px;
   display: flex;
   flex-wrap: nowrap;
-  margin: 0;
   padding: 0;
   border: none;
+  /* position: fixed;
+  z-index: 1; */
 }
 .Header h3 {
-  padding: 0 0 4% 12%;
+  padding: 0 0 4% 5%;
   
 }

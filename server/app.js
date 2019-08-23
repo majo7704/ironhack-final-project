@@ -77,31 +77,39 @@ const wishlistPlantsRouter = require("./routes/wishlist/wishlist-plants")
 
 
 
-app.use("/plants", plantsRouter); //upload file setup
-app.use("/plant-care", plantCareRouter); 
-app.use("/add", protect, myPlantCreateRouter);
-app.use("/users", authRouter);
-app.use("/user-plants", userPlantsRouter)
-app.use("/user-wishlist", wishlistCreateRouter)
-app.use("/user-wishlist-plants", wishlistPlantsRouter)
+app.use("/api/plants", plantsRouter); //upload file setup
+app.use("/api/plant-care", plantCareRouter); 
+app.use("/api/add", protect, myPlantCreateRouter);
+app.use("/api/users", authRouter);
+app.use("/api/user-plants", userPlantsRouter)
+app.use("/api/user-wishlist", wishlistCreateRouter)
+app.use("/api/user-wishlist-plants", wishlistPlantsRouter)
 
 
-app.use('/api', require('./routes/file-upload-routes'))
-app.use("/", protect, require('./routes/myJungle'));
+app.use('/api/api', require('./routes/file-upload-routes'))
+app.use("/api/", protect, require('./routes/myJungle'));
+
+
+// app.get("*", (req, res, next) => {
+//   // If no routes match, send them the React HTML.
+//   res.sendFile(__dirname + "/public/index.html");
+// });
+
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
 
 // error handler
 app.use(function (err, req, res, next) {
+
+  app.use(function (req, res, next) {
+    next(createError(404));
+  });
 
 
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
-
+ 
   // render the error page
   res.status(err.status || 500);
   res.json(err);

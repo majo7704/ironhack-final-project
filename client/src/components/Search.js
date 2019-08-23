@@ -14,7 +14,7 @@ export default class Search extends Component {
       return (
         <div>
           <HeaderSearch/>
-          <Navbar/>     
+          {/* <Navbar/>      */}
             <>
               <form className="Search-form" action="">
                 <Link to="">

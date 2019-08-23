@@ -38,7 +38,7 @@ export default class Navbar extends Component {
       <div>
         <nav className="Nav">
             <div className="navbar_link">
-                <Link to={`/myJungle/${userId}`}>
+            <Link to={`/myJungle/${userId}`} style={{ textDecorationLine: 'none', color: '#191818' }}>
                   <p
                     style={{
                       fontFamily: "Nunito",
@@ -55,7 +55,7 @@ export default class Navbar extends Component {
             </div>
 
             <div className="navbar_link">
-                <Link to={`/myWishlist/${userId}`}>
+            <Link to={`/myWishlist/${userId}`} style={{ textDecorationLine: 'none', color: '#191818' }}>
                   <p
                     style={{
                       fontFamily: "Nunito",

@@ -7,8 +7,6 @@ import Facebook from './Facebook'
 import Auth from "../utils/Auth";
 import "./Login.css";
 
-
-
 const auth = new Auth();
 
 export default class Login extends Component {
@@ -36,6 +34,7 @@ export default class Login extends Component {
 
   handleFormSubmit = (e)=> {
     e.preventDefault();
+
     auth.login(this.state.user.username, this.state.user.password)
         .then(()=> {
           const userId = auth.getUser()._id

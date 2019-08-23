@@ -5,7 +5,7 @@ import "./MyPlant.css"
 import MainLayout from './layouts/MainLayout';
 import React, { Component } from 'react';
 import axios from "axios";
-import service from "../api/service";
+// import service from "../api/service";
 
 // import Footer from './Footer'
 
@@ -26,21 +26,21 @@ class MyPlant extends Component {
     }
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
   }
-  handleFileUpload = e => {
-    console.log("The file to be uploaded is: ", e.target.files[0]);
+  // handleFileUpload = e => {
+  //   console.log("The file to be uploaded is: ", e.target.files[0]);
 
-    const uploadData = new FormData();
-    uploadData.append('image_url', e.target.files[0]);
+  //   const uploadData = new FormData();
+  //   uploadData.append('image_url', e.target.files[0]);
 
-    service.handleUpload(uploadData)
-      .then(response => {
-        console.log('response is:', response);
-        this.setState({ image_url: response.secure_url });
-      })
-      .catch(err => {
-        console.log('Error while uploading the file: ', err)
-      });
-  }
+  //   service.handleUpload(uploadData)
+  //     .then(response => {
+  //       console.log('response is:', response);
+  //       this.setState({ image_url: response.secure_url });
+  //     })
+  //     .catch(err => {
+  //       console.log('Error while uploading the file: ', err)
+  //     });
+  // }
   
 
   handleFormChange = (e)=> {
@@ -50,17 +50,18 @@ class MyPlant extends Component {
       // loaded: 0
     })
   }
-  handleSubmit = e => {
-    e.preventDefault();
 
-    service.saveNewThing(this.state)
-      .then(res => {
-        console.log('added: ', res);
-      })
-      .catch(err => {
-        console.log('Error while adding the thing: ', err);
-    })
-  }
+  // handleSubmit = e => {
+  //   e.preventDefault();
+
+  //   service.saveNewThing(this.state)
+  //     .then(res => {
+  //       console.log('added: ', res);
+  //     })
+  //     .catch(err => {
+  //       console.log('Error while adding the thing: ', err);
+  //   })
+  // }
 
   // handleFormSubmit = (e)=> {
   //   e.preventDefault(); 
@@ -118,7 +119,9 @@ class MyPlant extends Component {
             }}
             className="Care-Plant-box"
           >
-            <Link to={"/login"} className="Care-links">
+            <Link to={"/login"} className="Care-links" style={{
+              textDecorationLine: 'none', color: '#191818'
+            }} >
               Care
             </Link>
             <Link to={"/myPlant"} className="Plant-links">
