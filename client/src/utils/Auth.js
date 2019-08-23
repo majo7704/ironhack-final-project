@@ -18,7 +18,7 @@ export default class Auth {
             data: qs.stringify({ username, password })
         })
         .then((response)=> {
-            debugger
+           
             this.setUser(response.data)
         })
     }
@@ -66,7 +66,6 @@ export default class Auth {
             withCredentials: true,
         })
            .then((res) => {
-            debugger
             localStorage.removeItem('user');
         })
     }    

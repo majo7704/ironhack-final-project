@@ -3,9 +3,11 @@ import './Header.css'
 
 export default function Header() {
   return (
-    <div className='Header'>
+    <div style={{
+      height: '150px',
+      borderBottomLeftRradius: '50px' }} className='Header'>
       <>
-        <h3 style={{fontFamily: "Nunito", fontWeight: 'bold'}}>Plant Library</h3>
+        <h3 style={{fontFamily: "Nunito", fontWeight: 'bold'}}>Find your plant</h3>
         </>
     </div>
   )
