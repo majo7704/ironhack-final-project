@@ -5,6 +5,7 @@ import "./MyPlant.css"
 import MainLayout from './layouts/MainLayout';
 import React, { Component } from 'react';
 import axios from "axios";
+import camera from '../assets/icons/camera.svg'
 // import service from "../api/service";
 
 // import Footer from './Footer'
@@ -197,12 +198,12 @@ class MyPlant extends Component {
                 style={{
                   fontFamily: "Montserrat",
                   fontWeight: "bold",
-                  margin: "0"
+                  margin: "0 auto"
                 }}
               >
                 Size
               </label>
-              <input style={{width:'70%'}}
+              <input 
                 type="number"
                 name="size"
                 placeholder="15 cm"
@@ -224,9 +225,8 @@ class MyPlant extends Component {
                 style={{
                   fontFamily: "Montserrat",
                   fontWeight: "bold",
+                  width: "70%"
                   
-                  width: "100%",
-                  float: 'right'
                 }}
                 type="number"
                 name="pot_diameter"
@@ -274,9 +274,9 @@ class MyPlant extends Component {
               {/* reacts wants to be in charge of all the data   */}
             </div>
             <div className="Box-container">
-              <button className="Add-image">
+              <button  className="Add-image" >
                 {/* <img src={} alt=""/> */}
-                <input type="file" name="image_url" onChange={this.handleFormChange} />
+                <input  type="file" name="image_url" onChange={this.handleFormChange} />
               </button>
             </div>
             <div>
