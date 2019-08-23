@@ -74,7 +74,6 @@ const wishlistCreateRouter = require("./routes/wishlist/wishlist-create")
 const wishlistPlantsRouter = require("./routes/wishlist/wishlist-plants")
 
 
-
 app.use("/api/plants", plantsRouter); //upload file setup
 app.use("/api/plant-care", plantCareRouter); 
 app.use("/api/add", protect, myPlantCreateRouter);

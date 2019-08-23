@@ -46,7 +46,9 @@ export default class SearchPlants extends Component {
         <Search inputvalue={this.state.searchTerm} handleChange={this.onTextChanged}/>
         {
           this.state.suggestions ?
-            <PlantList plants={this.state.suggestions} /> :
+            <PlantList 
+            route="scientificPlantCare"
+            plants={this.state.suggestions} /> :
             <p>Loading</p>
         }
       </MainLayout>

@@ -45,7 +45,10 @@ export default class myJungle extends Component {
         <MainLayout>
           {
             this.state.userPlants ?
-              <PlantList plants={this.state.userPlants} /> :
+              <PlantList 
+              model="plantOfUser"
+              route="myPlant"
+              plants={this.state.userPlants} /> :
               <p>Loading</p>
           }
         </MainLayout>
