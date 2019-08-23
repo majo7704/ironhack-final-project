@@ -11,6 +11,8 @@ const myPlantsSchema = new Schema({
     ref: "users"
   },
   cool_name: String,
+  common_name:String,
+  scientific_name:String,
   location: String,
   buying_date: Date,
   size: Number,

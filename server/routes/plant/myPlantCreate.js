@@ -13,6 +13,8 @@ router.post('/:scientificPlantId', (req, res, next) => {
         const newPlant = {
         scientific_plant: mongoose.Types.ObjectId(req.params.scientificPlantId),
         user: mongoose.Types.ObjectId(req.session.user._id),
+        common_name: scientificPlant.common_name,
+        scientific_name: scientificPlant.scientific_name,
         image_url: scientificPlant.image_url, 
         light_expousure: scientificPlant.light_expousure,  
         temperature: scientificPlant.temperature, 

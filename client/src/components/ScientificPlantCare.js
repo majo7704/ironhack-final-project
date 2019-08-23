@@ -23,14 +23,16 @@ export default class ScientificPlantCare  extends Component {
   componentDidMount() {
     const { params } = this.props.match;
     const plantId = params.id
-
+    const model = params.model
+    debugger
+    debugger
     axios({
       method: "GET",
       url: `${process.env.REACT_APP_API}/plant-care/${plantId}`,
       withCredentials: true
     })
     .then(response => {
-      
+      debugger
       this.setState({plant: response.data})
     })
   }

@@ -6,8 +6,9 @@ export default function PlantList(props) {
   
   if (props.plants) {
     var plants = props.plants.map((plant) => {
+      debugger
       return (
-        <Link to={`/scientificPlantCare/${plant._id}`} style={{ textDecoration: 'none', color: '#191818', textAlign: 'center'}}  >
+        <Link to={`/${props.route}/${plant._id}/`} style={{ textDecoration: 'none', color: '#191818', textAlign: 'center'}}  >
           <div className="Plant-box">
             <img style={{width: '110px', height:'110px', display: 'flex'}} className="Plant-List-image" src={plant.image_url} alt="plant_img" />
             <div>

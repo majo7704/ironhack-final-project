@@ -8,7 +8,7 @@ const router = express.Router();
 const UserPlants = require('../../models/PlantOfUser.js')
 router.get('/:user_id', (req, res, next) => {
 
-  UserPlants.find({user: req.params.user_id})
+  UserPlants.find({user: req.params.user_id}).populate("scientific_plant").exec()
     .then((userplants) => {
        
         console.log(userplants)
