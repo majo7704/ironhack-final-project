@@ -1,43 +1,47 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "cb1d7c9f4eee97eb95c9c7fbc1a2b57e",
+    "revision": "d993c6151178c1419b3fc2b1022bea0e",
     "url": "/index.html"
   },
   {
-    "revision": "c7dc7d846abe3e3ed8d2",
-    "url": "/static/css/main.27559a76.chunk.css"
+    "revision": "d9597a7df0b127ecfe71",
+    "url": "/static/css/main.1e90b652.chunk.css"
   },
   {
-    "revision": "2ebb7aca6ca59be1a721",
-    "url": "/static/js/2.58a4fb8b.chunk.js"
+    "revision": "9e68bd2a08f22dcf5547",
+    "url": "/static/js/2.40b97b6c.chunk.js"
   },
   {
-    "revision": "c7dc7d846abe3e3ed8d2",
-    "url": "/static/js/main.94a389c7.chunk.js"
+    "revision": "d9597a7df0b127ecfe71",
+    "url": "/static/js/main.34080022.chunk.js"
   },
   {
     "revision": "2bd07c679805b08b49cb",
     "url": "/static/js/runtime~main.ea92a0de.js"
   },
   {
-    "revision": "cf5bf674d96572c0b0e6167fa8d31c9a",
-    "url": "/static/media/add (1).cf5bf674.svg"
+    "revision": "588f905075b7d61f08fd480f873c4496",
+    "url": "/static/media/add (1).588f9050.svg"
   },
   {
-    "revision": "8091b243e4292c460a43171dffa3ee9b",
-    "url": "/static/media/calendar.8091b243.svg"
+    "revision": "3e6b58902e498654bdd96aa3acde75e7",
+    "url": "/static/media/calendar.3e6b5890.svg"
   },
   {
-    "revision": "48ecb8f6d6dacba2bd60444fb04b981e",
-    "url": "/static/media/cancel.48ecb8f6.svg"
+    "revision": "76669f191494d2a6c39279cc888899cd",
+    "url": "/static/media/camera.76669f19.svg"
   },
   {
-    "revision": "223633807d7340bc9d34b601c0bdb6f9",
-    "url": "/static/media/leaf.22363380.svg"
+    "revision": "f1a8781e6ec3ea96e069685d185086af",
+    "url": "/static/media/cancel.f1a8781e.svg"
   },
   {
-    "revision": "67b78e1368de83eb33a396a72763f6bd",
-    "url": "/static/media/like.67b78e13.svg"
+    "revision": "39a987701bee7334707c6e86131a487f",
+    "url": "/static/media/leaf.39a98770.svg"
+  },
+  {
+    "revision": "065e146bd5b40928ab87637b5f1bde79",
+    "url": "/static/media/like.065e146b.svg"
   },
   {
     "revision": "c176cde51fb554b0a9b13e8d1730c2f4",
@@ -60,12 +64,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/montserrat-v14-latin-regular.bc3aa95d.woff2"
   },
   {
-    "revision": "f3fef7e587e6c436df1d7985b2a90ada",
-    "url": "/static/media/montserrat-v14-latin-regular.f3fef7e5.svg"
-  },
-  {
-    "revision": "5106101c6cb1300b7d2837eed71677df",
-    "url": "/static/media/nunito-v11-latin-regular.5106101c.svg"
+    "revision": "cf4574fbce791ed7debe1dee7f816283",
+    "url": "/static/media/montserrat-v14-latin-regular.cf4574fb.svg"
   },
   {
     "revision": "6386ba6af7b7a5480eb5efda82ff803c",
@@ -74,6 +74,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "a9bde0066f1398b16ba151493d70fc58",
     "url": "/static/media/nunito-v11-latin-regular.a9bde006.eot"
+  },
+  {
+    "revision": "bb97186ba7997cdae044125474bad2d3",
+    "url": "/static/media/nunito-v11-latin-regular.bb97186b.svg"
   },
   {
     "revision": "c2f9a79dc1d2101b9beda761d1bd0494",
@@ -88,23 +92,23 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/pinkBubble.88d60a4c.png"
   },
   {
-    "revision": "ced5362360ed73c39a870a283f812bdd",
-    "url": "/static/media/search.ced53623.svg"
+    "revision": "e0857740b05a9c973101f301af393855",
+    "url": "/static/media/search.e0857740.svg"
   },
   {
-    "revision": "2e09012dfd8307a144f206b5b7a8ad12",
-    "url": "/static/media/soil.2e09012d.svg"
+    "revision": "8d8ce91ed4c69c65446425f70c8b2f3f",
+    "url": "/static/media/soil.8d8ce91e.svg"
   },
   {
     "revision": "436426f1cf151441c9a9d95f82e25d9d",
     "url": "/static/media/tip.436426f1.svg"
   },
   {
-    "revision": "9f614a67dd360231ecc5459443bbe2c9",
-    "url": "/static/media/toxicity.9f614a67.svg"
+    "revision": "a9e5776e487c4e0373d133fd5bd15310",
+    "url": "/static/media/toxicity.a9e5776e.svg"
   },
   {
-    "revision": "be6e348f317c4c838f9243d4e562100b",
-    "url": "/static/media/user.be6e348f.svg"
+    "revision": "ce871d518319a948b27b0e1d09560f3f",
+    "url": "/static/media/user.ce871d51.svg"
   }
 ]);
