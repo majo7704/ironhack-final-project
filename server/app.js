@@ -28,7 +28,7 @@ app.use(session({
   saveUninitialized: true
 }))
 
-mongoose.connect(process.env.DB, { useNewUrlParser: true })
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true })
   .then(() => {
     console.log('Connected to Mongo');
   }).catch(err => {
